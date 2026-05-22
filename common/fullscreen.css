@@ -1,0 +1,157 @@
+.full-menu {
+  /* Full-screen variants reuse this viewport-sized dialog base. */
+  inset: 0;
+  grid-template-rows: auto 1fr auto;
+  width: 100vw;
+  height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  opacity: 0;
+  translate: 0 -24px;
+
+  &[open] {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.full-menu[open] {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@starting-style {
+  .full-menu[open] {
+    opacity: 0;
+    translate: 0 -24px;
+  }
+}
+
+.full-menu .menu-list {
+  overflow: visible;
+  overscroll-behavior-y: auto;
+}
+
+.large-menu-list {
+  /* Big menu text is reduced on narrow screens. */
+  a,
+  summary {
+    font-size: 4rem;
+
+    @media (width <= 436px) {
+      font-size: 3rem;
+    }
+  }
+}
+
+.fullscreen-menu {
+  /* This variant turns the dialog into a full viewport menu. */
+  grid-template-rows: auto 1fr;
+  background: var(--text);
+  color: var(--surface);
+
+  .brand {
+    color: inherit;
+  }
+
+  .button-close {
+    background: transparent;
+    color: inherit;
+
+    &:hover {
+      background: rgb(255 255 255 / 12%);
+    }
+  }
+}
+
+.fullscreen-menu-nav {
+  /* Large links make the full-screen menu feel intentional. */
+  counter-reset: fullscreen-item;
+  display: grid;
+  align-content: center;
+  gap: 0;
+  overflow: hidden;
+
+  a {
+    --menu-index: 1;
+
+    counter-increment: fullscreen-item;
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    align-items: baseline;
+    gap: 24px;
+    min-height: auto;
+    padding: 18px 0;
+    border: 0;
+    border-bottom: 1px solid rgb(255 255 255 / 24%);
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 0.95;
+    opacity: 1;
+    text-align: left;
+    text-decoration: none;
+    translate: 0 0;
+    transition:
+      opacity 0.35s ease,
+      translate 0.35s ease,
+      background-color 0.2s,
+      padding-inline 0.2s;
+    transition-delay:
+      calc((var(--menu-index) - 1) * 45ms),
+      calc((var(--menu-index) - 1) * 45ms),
+      0s,
+      0s;
+
+    &:hover {
+      background: rgb(255 255 255 / 10%);
+      padding-inline: 16px;
+    }
+
+    @media (width <= 720px) {
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: 16px;
+      font-size: 3.25rem;
+    }
+  }
+
+  a::before {
+    content: counter(fullscreen-item, decimal-leading-zero);
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  @supports (width: calc(sibling-index() * 1px)) {
+    a {
+      --menu-index: sibling-index();
+    }
+  }
+}
+
+@starting-style {
+  .fullscreen-menu[open] .fullscreen-menu-nav a {
+    opacity: 0;
+    translate: calc((var(--menu-index) - 1) * 24px) 0;
+  }
+}
+
+@starting-style {
+  .fullscreen-menu:popover-open .fullscreen-menu-nav a {
+    opacity: 0;
+    translate: calc((var(--menu-index) - 1) * 24px) 0;
+  }
+}
+
+@supports (width: calc(sibling-index() * 1px)) {
+  @starting-style {
+    .fullscreen-menu[open] .fullscreen-menu-nav a,
+    .fullscreen-menu:popover-open .fullscreen-menu-nav a {
+      translate: calc((sibling-index() - 1) * 24px) 0;
+    }
+  }
+}

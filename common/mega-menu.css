@@ -1,0 +1,94 @@
+.mega-menu {
+  /* The mega menu is wide, but still avoids viewport overflow. */
+  inset: 80px 24px auto;
+  width: calc(100vw - 48px);
+  max-height: calc(100dvh - 104px);
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow:
+    0 20px 60px rgb(32 32 32 / 12%),
+    inset 0 0 0 1px var(--line);
+  opacity: 0;
+  translate: 0 -16px;
+
+  @media (width <= 720px) {
+    inset: 80px 16px auto;
+    width: calc(100vw - 32px);
+    max-height: calc(100dvh - 96px);
+    padding: 16px;
+  }
+
+  &::backdrop {
+    background: transparent;
+  }
+
+  .mega-grid {
+    /* Grid columns collapse as the screen gets narrower. */
+    display: grid;
+    gap: 0;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    @media (width <= 960px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (width <= 560px) {
+      grid-template-columns: 1fr;
+    }
+
+    section {
+      display: grid;
+      align-content: start;
+      gap: 8px;
+      min-width: 0;
+      padding: 0 20px 20px 0;
+
+      @media (width <= 560px) {
+        padding-right: 0;
+      }
+    }
+
+    h2 {
+      margin: 0 0 4px;
+      color: rgb(32 32 32 / 64%);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+    }
+
+    a {
+      display: block;
+      min-width: 0;
+      min-height: auto;
+      padding: 10px 12px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      cursor: pointer;
+      font: inherit;
+      font-weight: bold;
+      text-align: left;
+      text-decoration: none;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background: var(--bg);
+      }
+    }
+  }
+}
+
+.mega-menu:popover-open {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@starting-style {
+  .mega-menu:popover-open {
+    opacity: 0;
+    translate: 0 -16px;
+  }
+}

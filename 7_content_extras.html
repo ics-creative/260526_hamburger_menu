@@ -4,28 +4,87 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Content Pattern: Search and Contact</title>
-    <link rel="stylesheet" href="base.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="common/base.css" />
+    <link rel="stylesheet" href="common/layout.css" />
+    <link rel="stylesheet" href="common/controls.css" />
+    <link rel="stylesheet" href="common/menu.css" />
+    <link rel="stylesheet" href="common/fullscreen.css" />
     <script src="menu.js" defer></script>
     <style>
-      .extras-panel {
-        /* Extra actions sit outside the main navigation list. */
+      .extras-menu {
+        grid-template-rows: auto auto 1fr auto;
+      }
+
+      .extras-actions {
         display: grid;
         gap: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
-        a {
-          padding: 16px;
-          border: 1px solid var(--line);
-          border-radius: 8px;
-          font-weight: bold;
-          transition:
-            background-color 0.2s,
-            border-color 0.2s;
+        @media (width <= 560px) {
+          grid-template-columns: 1fr;
+        }
+      }
 
-          &:hover {
-            background-color: var(--bg);
-            border-color: var(--text);
-          }
+      .action-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 0 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        font-weight: bold;
+        text-align: center;
+        transition:
+          background-color 0.2s,
+          border-color 0.2s;
+
+        &:hover {
+          background-color: var(--bg);
+          border-color: var(--text);
+        }
+      }
+
+      .social-links {
+        display: flex;
+        gap: 12px;
+      }
+
+      .social-link {
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        background: transparent;
+        color: inherit;
+        transition:
+          background-color 0.2s,
+          border-color 0.2s;
+
+        &:hover {
+          background-color: var(--bg);
+          border-color: var(--text);
+        }
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .extras-panel {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+
+        @media (width <= 560px) {
+          align-items: stretch;
+          flex-direction: column;
         }
       }
 
@@ -38,27 +97,34 @@
         }
 
         input {
-          min-height: 48px;
-          padding: 0 16px;
+          min-height: 56px;
+          padding: 16px;
           border: 1px solid var(--line);
           border-radius: 8px;
           font: inherit;
+          transition:
+            background-color 0.2s,
+            border-color 0.2s;
+
+          &:hover {
+            background-color: var(--bg);
+            border-color: var(--text);
+          }
         }
       }
     </style>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#platform">Atlas CRM</a>
+      <a class="brand" href="#platform">Example Website</a>
+      <a class="demo-index-link" href="index.html">Demos</a>
       <!-- Desktop navigation mirrors the menu links. -->
       <nav class="site-nav">
         <a href="#platform">Platform</a>
         <a href="#pricing">Pricing</a>
         <a href="#demo">Demo</a>
       </nav>
-      <button class="icon-button menu-button" commandfor="extras-menu" command="show-modal" title="Open menu">
-        <span class="visually-hidden">Open menu</span>
-      </button>
+      <button class="button-icon button-menu" commandfor="extras-menu" command="show-modal" title="Open menu"></button>
     </header>
 
     <main>
@@ -79,14 +145,17 @@
       </section>
     </main>
 
-    <!-- Navigation links first, action links second. -->
+    <!-- Search comes first so visitors can jump directly to docs or help content. -->
     <dialog class="menu-dialog full-menu extras-menu" id="extras-menu" closedby="any">
       <header class="menu-header">
-        <a class="brand" href="#platform">Atlas CRM</a>
-        <button class="icon-button close-button" commandfor="extras-menu" command="close" title="Close menu">
-          <span class="visually-hidden">Close menu</span>
-        </button>
+        <a class="brand" href="#platform">Example Website</a>
+        <button class="button-icon button-close" commandfor="extras-menu" command="close" title="Close menu"></button>
       </header>
+
+      <form class="menu-search" action="#platform">
+        <label for="menu-search">Search</label>
+        <input id="menu-search" type="search" name="q" placeholder="Search docs" />
+      </form>
 
       <nav class="menu-list large-menu-list extras-list">
         <a href="#platform">Platform</a>
@@ -94,16 +163,30 @@
         <a href="#demo">Demo</a>
       </nav>
 
-      <form class="menu-search" action="#platform">
-        <label for="menu-search">Search</label>
-        <input id="menu-search" type="search" name="q" placeholder="Search docs" />
-      </form>
-
       <div class="extras-panel">
-        <a href="#demo">Contact sales</a>
-        <a href="#demo">Download materials</a>
-        <a href="#platform">LinkedIn</a>
-        <a href="#platform">X / Twitter</a>
+        <div class="extras-actions">
+          <a class="action-button" href="#demo">Contact sales</a>
+          <a class="action-button" href="#demo">Download materials</a>
+        </div>
+
+        <div class="social-links">
+          <a class="social-link" href="#platform" title="LinkedIn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M5 9h3.4v10H5V9Zm.2-3.1c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8S8 7.7 7 7.7s-1.8-.8-1.8-1.8ZM10.4 9h3.2v1.4c.5-.8 1.5-1.7 3.1-1.7 3.3 0 3.9 2.2 3.9 5V19h-3.4v-4.7c0-1.1 0-2.6-1.6-2.6s-1.8 1.2-1.8 2.5V19h-3.4V9Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+          <a class="social-link" href="#platform" title="X" aria-label="X">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="m4 4 6.9 9.1L4.4 20H7l5.1-5.5 4.2 5.5H20l-7.2-9.5L18.8 4h-2.6L11.6 9 7.8 4H4Zm3.1 1.8h1.8l8 12.4h-1.8L7.1 5.8Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
       </div>
     </dialog>
   </body>

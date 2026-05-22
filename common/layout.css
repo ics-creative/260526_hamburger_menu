@@ -1,0 +1,105 @@
+.site-header {
+  /* Sticky header keeps the menu trigger in a stable place. */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.brand,
+.demo-index-link,
+.site-nav a,
+.hero a {
+  font-weight: bold;
+}
+
+.demo-index-link {
+  margin-inline-end: auto;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+
+  &:hover {
+    border-color: var(--text);
+    background-color: var(--bg);
+  }
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+
+  @media (width <= 436px) {
+    /* Small screens rely on the hamburger menu instead. */
+    display: none;
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color 0.2s;
+
+    &:hover {
+      text-decoration-color: currentColor;
+    }
+  }
+}
+
+.hero {
+  padding: 48px 24px;
+
+  p {
+    font-size: 1rem;
+  }
+
+  h1 {
+    max-width: 720px;
+    margin: 8px 0 24px;
+    font-size: 4rem;
+    line-height: 1;
+
+    @media (width <= 436px) {
+      font-size: 3rem;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color 0.2s;
+
+    &:hover {
+      text-decoration-color: currentColor;
+    }
+  }
+}
+
+.summary {
+  max-width: 720px;
+  padding: 0 24px 48px;
+
+  h2 {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+  }
+}

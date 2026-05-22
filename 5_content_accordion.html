@@ -4,8 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Content Pattern: Accordion</title>
-    <link rel="stylesheet" href="base.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="common/base.css" />
+    <link rel="stylesheet" href="common/layout.css" />
+    <link rel="stylesheet" href="common/controls.css" />
+    <link rel="stylesheet" href="common/menu.css" />
+    <link rel="stylesheet" href="common/fullscreen.css" />
     <script src="menu.js" defer></script>
     <style>
       .accordion-list {
@@ -74,24 +77,30 @@
 
         a {
           display: block;
-          padding: 8px 0;
+          padding: 10px 16px;
+          border-radius: 8px;
           font-size: 1.125rem;
           font-weight: normal;
+          transition: background-color 0.2s;
+
+          &:hover,
+          &:focus-visible {
+            background-color: rgb(32 32 32 / 8%);
+          }
         }
       }
     </style>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#about">Civic Hall</a>
+      <a class="brand" href="#about">Example Website</a>
+      <a class="demo-index-link" href="index.html">Demos</a>
       <nav class="site-nav">
         <a href="#about">About</a>
         <a href="#departments">Departments</a>
         <a href="#access">Access</a>
       </nav>
-      <button class="icon-button menu-button" commandfor="accordion" command="show-modal" title="Open menu">
-        <span class="visually-hidden">Open menu</span>
-      </button>
+      <button class="button-icon button-menu" commandfor="accordion" command="show-modal" title="Open menu"></button>
     </header>
 
     <main>
@@ -115,10 +124,8 @@
     <!-- All details start closed; users choose what to open. -->
     <dialog class="menu-dialog full-menu accordion-menu" id="accordion" closedby="any">
       <header class="menu-header">
-        <a class="brand" href="#about">Civic Hall</a>
-        <button class="icon-button close-button" commandfor="accordion" command="close" title="Close menu">
-          <span class="visually-hidden">Close menu</span>
-        </button>
+        <a class="brand" href="#about">Example Website</a>
+        <button class="button-icon button-close" commandfor="accordion" command="close" title="Close menu"></button>
       </header>
 
       <div class="menu-list large-menu-list accordion-list">

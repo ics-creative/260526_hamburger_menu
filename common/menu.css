@@ -1,0 +1,98 @@
+.menu-dialog {
+  position: fixed;
+  /* Keep layout outside [open] so exit animation does not reflow content. */
+  display: grid;
+  gap: 16px;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 16px 24px;
+  border: 0;
+  background: var(--surface);
+  transition:
+    opacity 0.4s,
+    translate 1s var(--spring),
+    display 1s allow-discrete,
+    overlay 1s allow-discrete;
+  transition-behavior: allow-discrete;
+
+  &:not([open]):not(:popover-open) {
+    display: none;
+  }
+
+  &::backdrop {
+    background: rgb(32 32 32 / 28%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  &[open],
+  &:popover-open {
+    opacity: 1;
+    translate: 0 0;
+
+    &::backdrop {
+      opacity: 1;
+    }
+  }
+}
+
+@starting-style {
+  .menu-dialog[open],
+  .menu-dialog:popover-open {
+    opacity: 0;
+  }
+
+  .menu-dialog[open]::backdrop,
+  .menu-dialog:popover-open::backdrop {
+    opacity: 0;
+  }
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-list {
+  /* The list scrolls, not the animating dialog shell. */
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Dialog stays animatable; this inner area owns scroll chaining. */
+  overscroll-behavior-y: contain;
+
+  a,
+  summary {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.125rem;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  > a,
+  summary {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: var(--bg);
+    }
+  }
+}
+
+.menu-meta {
+  margin: 0;
+  font-size: 1rem;
+}

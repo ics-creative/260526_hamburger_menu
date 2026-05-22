@@ -4,67 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Opening Pattern: Compact</title>
-    <link rel="stylesheet" href="base.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="common/base.css" />
+    <link rel="stylesheet" href="common/layout.css" />
+    <link rel="stylesheet" href="common/controls.css" />
+    <link rel="stylesheet" href="common/menu.css" />
+    <link rel="stylesheet" href="common/compact.css" />
     <script src="menu.js" defer></script>
-    <style>
-      .compact-menu {
-        /* Compact menus behave like a small popover. */
-        inset: 88px 24px auto auto;
-        width: 288px;
-        padding: 8px;
-        border-radius: 8px;
-        box-shadow:
-          0 16px 40px rgb(32 32 32 / 10%),
-          inset 0 0 0 1px var(--line);
-        opacity: 0;
-        translate: 0 -8px;
-
-        @media (width <= 436px) {
-          inset: 88px 24px auto;
-          width: auto;
-        }
-
-        &:popover-open {
-          @starting-style {
-            opacity: 0;
-            translate: 0 -8px;
-          }
-        }
-
-        &::backdrop {
-          background: transparent;
-        }
-
-        .menu-list {
-          gap: 4px;
-        }
-
-        .menu-list > a {
-          /* Equal padding keeps the small menu balanced. */
-          min-height: 0;
-          padding: 12px;
-          line-height: 1.25;
-        }
-      }
-
-      .compact-menu:popover-open {
-        opacity: 1;
-        translate: 0 0;
-      }
-    </style>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#intro">Little Press</a>
+      <a class="brand" href="#intro">Example Website</a>
+      <a class="demo-index-link" href="index.html">Demos</a>
       <nav class="site-nav">
         <a href="#intro">Intro</a>
         <a href="#issues">Issues</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="icon-button menu-button" popovertarget="compact" title="Open menu">
-        <span class="visually-hidden">Open menu</span>
-      </button>
+      <button class="button-icon button-menu" popovertarget="compact" title="Open menu"></button>
     </header>
 
     <main>

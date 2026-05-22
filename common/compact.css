@@ -1,0 +1,44 @@
+.compact-menu {
+  /* Compact menus behave like a small popover. */
+  inset: 88px 24px auto auto;
+  width: 288px;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow:
+    0 16px 40px rgb(32 32 32 / 10%),
+    inset 0 0 0 1px var(--line);
+  opacity: 0;
+  translate: 0 -8px;
+
+  @media (width <= 436px) {
+    inset: 88px 24px auto;
+    width: auto;
+  }
+
+  &::backdrop {
+    background: transparent;
+  }
+
+  .menu-list {
+    gap: 4px;
+  }
+
+  .menu-list > a {
+    /* Equal padding keeps the small menu balanced. */
+    min-height: 0;
+    padding: 12px;
+    line-height: 1.25;
+  }
+}
+
+.compact-menu:popover-open {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@starting-style {
+  .compact-menu:popover-open {
+    opacity: 0;
+    translate: 0 -8px;
+  }
+}

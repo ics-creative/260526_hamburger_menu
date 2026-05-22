@@ -4,65 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Opening Pattern: Drawer</title>
-    <link rel="stylesheet" href="base.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="common/base.css" />
+    <link rel="stylesheet" href="common/layout.css" />
+    <link rel="stylesheet" href="common/controls.css" />
+    <link rel="stylesheet" href="common/menu.css" />
+    <link rel="stylesheet" href="common/drawer.css" />
     <script src="menu.js" defer></script>
-    <style>
-      .side-menu {
-        /* The drawer lives on the right edge and slides in. */
-        inset: 0 0 0 auto;
-        align-content: start;
-        grid-template-rows: auto 1fr;
-        width: 436px;
-        height: 100dvh;
-        overflow: visible;
-        border-left: 1px solid var(--line);
-        opacity: 1;
-        translate: 100% 0;
-
-        @media (width <= 436px) {
-          width: 100vw;
-        }
-
-        /* Covers spring overshoot so the right edge never exposes the page. */
-        &::after {
-          position: absolute;
-          inset: 0 -48px 0 auto;
-          width: 48px;
-          background: var(--surface);
-          content: "";
-        }
-
-        &[open] {
-          translate: 0 0;
-
-          @starting-style {
-            translate: 100% 0;
-          }
-        }
-
-        .menu-header {
-          justify-content: flex-end;
-        }
-      }
-
-      .side-menu[open] {
-        translate: 0 0;
-      }
-    </style>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#work">Northline</a>
+      <a class="brand" href="#work">Example Website</a>
+      <a class="demo-index-link" href="index.html">Demos</a>
       <!-- Regular links are kept for larger screens. -->
       <nav class="site-nav">
         <a href="#work">Work</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="icon-button menu-button" commandfor="drawer" command="show-modal" title="Open menu">
-        <span class="visually-hidden">Open menu</span>
-      </button>
+      <button class="button-icon button-menu" commandfor="drawer" command="show-modal" title="Open menu"></button>
     </header>
 
     <main>
@@ -86,9 +45,7 @@
     <!-- The dialog is the actual hamburger menu panel. -->
     <dialog class="menu-dialog side-menu" id="drawer" closedby="any">
       <header class="menu-header">
-        <button class="icon-button close-button" commandfor="drawer" command="close" title="Close menu">
-          <span class="visually-hidden">Close menu</span>
-        </button>
+        <button class="button-icon button-close" commandfor="drawer" command="close" title="Close menu"></button>
       </header>
 
       <!-- Menu items are links because they navigate on the page. -->

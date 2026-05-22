@@ -4,117 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Opening Pattern: Header Dropdown</title>
-    <link rel="stylesheet" href="base.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="common/base.css" />
+    <link rel="stylesheet" href="common/layout.css" />
+    <link rel="stylesheet" href="common/controls.css" />
+    <link rel="stylesheet" href="common/menu.css" />
+    <link rel="stylesheet" href="common/mega-menu.css" />
     <script src="menu.js" defer></script>
-    <style>
-      .mega-menu {
-        /* The mega menu is wide, but still avoids viewport overflow. */
-        inset: 80px 24px auto;
-        width: calc(100vw - 48px);
-        max-height: calc(100dvh - 104px);
-        padding: 24px;
-        border-radius: 8px;
-        box-shadow:
-          0 20px 60px rgb(32 32 32 / 12%),
-          inset 0 0 0 1px var(--line);
-        opacity: 0;
-        translate: 0 -16px;
-
-        @media (width <= 720px) {
-          inset: 80px 16px auto;
-          width: calc(100vw - 32px);
-          max-height: calc(100dvh - 96px);
-          padding: 16px;
-        }
-
-        &:popover-open {
-          @starting-style {
-            opacity: 0;
-            translate: 0 -16px;
-          }
-        }
-
-        &::backdrop {
-          background: transparent;
-        }
-
-        .mega-grid {
-          /* Grid columns collapse as the screen gets narrower. */
-          display: grid;
-          gap: 0;
-          min-height: 0;
-          overflow-x: hidden;
-          overflow-y: auto;
-          overscroll-behavior-y: contain;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-
-          @media (width <= 960px) {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-          }
-
-          @media (width <= 560px) {
-            grid-template-columns: 1fr;
-          }
-
-          section {
-            display: grid;
-            align-content: start;
-            gap: 8px;
-            min-width: 0;
-            padding: 0 20px 20px 0;
-
-            @media (width <= 560px) {
-              padding-right: 0;
-            }
-          }
-
-          h2 {
-            margin: 0 0 4px;
-            color: rgb(32 32 32 / 64%);
-            font-size: 0.875rem;
-            text-transform: uppercase;
-          }
-
-          a {
-            display: block;
-            min-width: 0;
-            min-height: auto;
-            padding: 10px 12px;
-            border: 0;
-            border-radius: 8px;
-            background: transparent;
-            cursor: pointer;
-            font: inherit;
-            font-weight: bold;
-            text-align: left;
-            text-decoration: none;
-            transition: background-color 0.2s;
-
-            &:hover {
-              background: var(--bg);
-            }
-          }
-        }
-      }
-
-      .mega-menu:popover-open {
-        opacity: 1;
-        translate: 0 0;
-      }
-    </style>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top">Market Daily</a>
+      <a class="brand" href="#top">Example Website</a>
+      <a class="demo-index-link" href="index.html">Demos</a>
       <nav class="site-nav">
         <a href="#news">News</a>
         <a href="#guides">Guides</a>
         <a href="#tools">Tools</a>
       </nav>
-      <button class="icon-button menu-button" popovertarget="mega" title="Open menu">
-        <span class="visually-hidden">Open menu</span>
-      </button>
+      <button class="button-icon button-menu" popovertarget="mega" title="Open menu"></button>
     </header>
 
     <main>
