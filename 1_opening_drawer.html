@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Opening Pattern: Drawer</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="menu.js" defer></script>
+    <style>
+      .side-menu {
+        /* The drawer lives on the right edge and slides in. */
+        inset: 0 0 0 auto;
+        align-content: start;
+        grid-template-rows: auto 1fr;
+        width: 436px;
+        height: 100dvh;
+        overflow: visible;
+        border-left: 1px solid var(--line);
+        opacity: 1;
+        translate: 100% 0;
+
+        @media (width <= 436px) {
+          width: 100vw;
+        }
+
+        /* Covers spring overshoot so the right edge never exposes the page. */
+        &::after {
+          position: absolute;
+          inset: 0 -48px 0 auto;
+          width: 48px;
+          background: var(--surface);
+          content: "";
+        }
+
+        &[open] {
+          translate: 0 0;
+
+          @starting-style {
+            translate: 100% 0;
+          }
+        }
+
+        .menu-header {
+          justify-content: flex-end;
+        }
+      }
+
+      .side-menu[open] {
+        translate: 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#work">Northline</a>
+      <!-- Regular links are kept for larger screens. -->
+      <nav class="site-nav">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="icon-button menu-button" commandfor="drawer" command="show-modal" title="Open menu">
+        <span class="visually-hidden">Open menu</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="work">
+        <p>Independent studio</p>
+        <h1>Quiet websites for focused teams.</h1>
+        <a href="#contact">Start a project</a>
+      </section>
+
+      <section class="summary" id="services">
+        <h2>Services</h2>
+        <p>Design systems, product websites, and fast front-end prototypes.</p>
+      </section>
+
+      <section class="summary" id="contact">
+        <h2>Contact</h2>
+        <p>Share the project outline through the contact page.</p>
+      </section>
+    </main>
+
+    <!-- The dialog is the actual hamburger menu panel. -->
+    <dialog class="menu-dialog side-menu" id="drawer" closedby="any">
+      <header class="menu-header">
+        <button class="icon-button close-button" commandfor="drawer" command="close" title="Close menu">
+          <span class="visually-hidden">Close menu</span>
+        </button>
+      </header>
+
+      <!-- Menu items are links because they navigate on the page. -->
+      <nav class="menu-list">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </dialog>
+  </body>
+</html>

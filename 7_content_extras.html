@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Content Pattern: Search and Contact</title>
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="menu.js" defer></script>
+    <style>
+      .extras-panel {
+        /* Extra actions sit outside the main navigation list. */
+        display: grid;
+        gap: 12px;
+
+        a {
+          padding: 16px;
+          border: 1px solid var(--line);
+          border-radius: 8px;
+          font-weight: bold;
+          transition:
+            background-color 0.2s,
+            border-color 0.2s;
+
+          &:hover {
+            background-color: var(--bg);
+            border-color: var(--text);
+          }
+        }
+      }
+
+      .menu-search {
+        display: grid;
+        gap: 8px;
+
+        label {
+          font-weight: bold;
+        }
+
+        input {
+          min-height: 48px;
+          padding: 0 16px;
+          border: 1px solid var(--line);
+          border-radius: 8px;
+          font: inherit;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#platform">Atlas CRM</a>
+      <!-- Desktop navigation mirrors the menu links. -->
+      <nav class="site-nav">
+        <a href="#platform">Platform</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#demo">Demo</a>
+      </nav>
+      <button class="icon-button menu-button" commandfor="extras-menu" command="show-modal" title="Open menu">
+        <span class="visually-hidden">Open menu</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="platform">
+        <p>BtoB software</p>
+        <h1>Sales operations without menu dead ends.</h1>
+        <a href="#demo">Book a demo</a>
+      </section>
+
+      <section class="summary" id="pricing">
+        <h2>Pricing</h2>
+        <p>Plans for small teams, growth teams, and enterprise operations.</p>
+      </section>
+
+      <section class="summary" id="demo">
+        <h2>Demo</h2>
+        <p>Choose a sales path from the menu.</p>
+      </section>
+    </main>
+
+    <!-- Navigation links first, action links second. -->
+    <dialog class="menu-dialog full-menu extras-menu" id="extras-menu" closedby="any">
+      <header class="menu-header">
+        <a class="brand" href="#platform">Atlas CRM</a>
+        <button class="icon-button close-button" commandfor="extras-menu" command="close" title="Close menu">
+          <span class="visually-hidden">Close menu</span>
+        </button>
+      </header>
+
+      <nav class="menu-list large-menu-list extras-list">
+        <a href="#platform">Platform</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#demo">Demo</a>
+      </nav>
+
+      <form class="menu-search" action="#platform">
+        <label for="menu-search">Search</label>
+        <input id="menu-search" type="search" name="q" placeholder="Search docs" />
+      </form>
+
+      <div class="extras-panel">
+        <a href="#demo">Contact sales</a>
+        <a href="#demo">Download materials</a>
+        <a href="#platform">LinkedIn</a>
+        <a href="#platform">X / Twitter</a>
+      </div>
+    </dialog>
+  </body>
+</html>
