@@ -1,13 +1,13 @@
+/* コンパクトpopoverメニュー */
+/* Compact popover menu */
+
 .compact-menu {
-  top: 88px;
+  top: calc(var(--site-header-height) + 8px);
   right: 24px;
-  bottom: auto;
-  left: auto;
   display: block;
   width: 288px;
-  height: auto;
   min-height: 0;
-  max-height: calc(100dvh - 112px);
+  max-height: calc(100dvh - var(--site-header-height) - 32px);
   padding: 8px;
   border-radius: 8px;
   box-shadow:
@@ -16,10 +16,7 @@
   opacity: 0;
   translate: 0 -8px;
 
-  @media (width <= 436px) {
-    top: 88px;
-    right: 24px;
-    bottom: auto;
+  @media (width <= 568px) {
     left: 24px;
     width: auto;
   }

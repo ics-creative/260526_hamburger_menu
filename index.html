@@ -4,16 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hamburger Menu Demos</title>
-    <link rel="stylesheet" href="common/base.css" />
-    <link rel="stylesheet" href="common/layout.css" />
-    <link rel="stylesheet" href="common/controls.css" />
-    <link rel="stylesheet" href="common/menu.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/controls.css" />
+    <link rel="stylesheet" href="styles/menu.css" />
     <style>
       .demo-sections {
         display: grid;
         gap: 24px;
         max-width: 720px;
-        padding: 0 24px 48px;
+        padding-block-end: 48px;
+        padding-inline: 24px;
       }
 
       .demo-section,
@@ -74,27 +75,28 @@
           <div class="demo-group">
             <h3>Page overlay</h3>
             <nav class="demo-list">
-              <a href="1_opening_drawer.html">Drawer</a>
-              <a href="2_opening_fullscreen.html">Fullscreen</a>
-            </nav>
-          </div>
-
-          <div class="demo-group">
-            <h3>In-page / small panel</h3>
-            <nav class="demo-list">
-              <a href="3_opening_compact.html">Compact</a>
-              <a href="4_opening_header_dropdown.html">Header dropdown</a>
+              <a href="1_opening_fullscreen.html">Fullscreen</a>
+              <a href="2_opening_drawer.html">Drawer</a>
             </nav>
           </div>
         </section>
 
         <section class="demo-section">
           <h2>Inside the menu</h2>
-
           <nav class="demo-list">
-            <a href="5_content_accordion.html">Accordion</a>
-            <a href="7_content_extras.html">Search, contact, SNS</a>
+            <a href="3_content_accordion.html">Accordion</a>
+            <a href="4_content_extras.html">Search, contact, SNS</a>
           </nav>
+        </section>
+
+        <section class="demo-section">
+          <h2>Popover</h2>
+          <div class="demo-group">
+            <nav class="demo-list">
+              <a href="10_opening_compact.html">Compact</a>
+              <a href="11_opening_header_dropdown.html">Header dropdown</a>
+            </nav>
+          </div>
         </section>
       </div>
     </main>

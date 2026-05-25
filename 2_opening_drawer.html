@@ -4,22 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Opening Pattern: Drawer</title>
-    <link rel="stylesheet" href="common/base.css" />
-    <link rel="stylesheet" href="common/layout.css" />
-    <link rel="stylesheet" href="common/controls.css" />
-    <link rel="stylesheet" href="common/menu.css" />
-    <link rel="stylesheet" href="common/drawer.css" />
-    <script src="drawer-menu.js" defer></script>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/controls.css" />
+    <link rel="stylesheet" href="styles/menu.css" />
+    <link rel="stylesheet" href="styles/menu-drawer.css" />
+    <script src="scripts/menu-drawer.js" defer></script>
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#work">Example Website</a>
       <a class="demo-index-link" href="index.html">Demos</a>
-      <nav class="site-nav">
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
       <!-- ハンバーガーメニューボタン -->
       <!-- Hamburger menu button -->
       <button class="button-icon button-menu" id="drawer-open" title="Open menu"></button>
@@ -50,15 +45,17 @@
     <!-- ドロワー型ハンバーガーメニュー本体 -->
     <!-- Drawer-style hamburger menu panel -->
     <dialog class="menu-dialog side-menu" id="drawer">
-      <header class="menu-header">
-        <button class="button-icon button-close" id="drawer-close" title="Close menu"></button>
-      </header>
+      <div class="side-menu-panel">
+        <header class="menu-header">
+          <button class="button-icon button-close" id="drawer-close" title="Close menu"></button>
+        </header>
 
-      <nav class="menu-list">
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
+        <nav class="menu-list">
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
     </dialog>
   </body>
 </html>

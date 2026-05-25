@@ -4,22 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Opening Pattern: Compact</title>
-    <link rel="stylesheet" href="common/base.css" />
-    <link rel="stylesheet" href="common/layout.css" />
-    <link rel="stylesheet" href="common/controls.css" />
-    <link rel="stylesheet" href="common/menu.css" />
-    <link rel="stylesheet" href="common/compact.css" />
-    <script src="compact-menu.js" defer></script>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/controls.css" />
+    <link rel="stylesheet" href="styles/menu.css" />
+    <link rel="stylesheet" href="styles/menu-compact.css" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#intro">Example Website</a>
       <a class="demo-index-link" href="index.html">Demos</a>
-      <nav class="site-nav">
-        <a href="#intro">Intro</a>
-        <a href="#issues">Issues</a>
-        <a href="#contact">Contact</a>
-      </nav>
       <!-- ハンバーガーメニューボタン -->
       <!-- Hamburger menu button -->
       <button class="button-icon button-menu" popovertarget="compact" title="Open menu"></button>
@@ -56,5 +50,17 @@
         <a href="#contact">Contact</a>
       </nav>
     </div>
+
+    <script>
+      // メニュー内リンク選択時のpopoverクローズ
+      // Popover close on menu-link selection
+      const menu = document.querySelector("#compact");
+
+      for (const link of menu.querySelectorAll("a[href]")) {
+        link.addEventListener("click", () => {
+          menu.hidePopover();
+        });
+      }
+    </script>
   </body>
 </html>

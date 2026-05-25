@@ -4,12 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Content Pattern: Search and Contact</title>
-    <link rel="stylesheet" href="common/base.css" />
-    <link rel="stylesheet" href="common/layout.css" />
-    <link rel="stylesheet" href="common/controls.css" />
-    <link rel="stylesheet" href="common/menu.css" />
-    <link rel="stylesheet" href="common/fullscreen.css" />
-    <script src="extras-menu.js" defer></script>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/controls.css" />
+    <link rel="stylesheet" href="styles/menu.css" />
+    <link rel="stylesheet" href="styles/menu-fullscreen.css" />
+    <script src="scripts/menu-extras.js" defer></script>
     <style>
       .extras-menu {
         grid-template-rows: auto auto 1fr auto;
@@ -20,7 +20,7 @@
         gap: 12px;
         grid-template-columns: repeat(2, minmax(0, 1fr));
 
-        @media (width <= 560px) {
+        @media (width <= 568px) {
           grid-template-columns: 1fr;
         }
       }
@@ -29,8 +29,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 52px;
-        padding: 0 18px;
+        min-height: 56px;
+        padding-inline: 16px;
         border: 1px solid var(--line);
         border-radius: 8px;
         background: var(--surface);
@@ -58,8 +58,6 @@
         height: 48px;
         border: 1px solid var(--line);
         border-radius: 50%;
-        background: transparent;
-        color: inherit;
         transition:
           background-color 0.2s,
           border-color 0.2s;
@@ -82,7 +80,7 @@
         gap: 16px;
         flex-wrap: wrap;
 
-        @media (width <= 560px) {
+        @media (width <= 568px) {
           align-items: stretch;
           flex-direction: column;
         }
@@ -118,11 +116,6 @@
     <header class="site-header">
       <a class="brand" href="#platform">Example Website</a>
       <a class="demo-index-link" href="index.html">Demos</a>
-      <nav class="site-nav">
-        <a href="#platform">Platform</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#demo">Demo</a>
-      </nav>
       <!-- ハンバーガーメニューボタン -->
       <!-- Hamburger menu button -->
       <button class="button-icon button-menu" id="extras-open" title="Open menu"></button>
@@ -154,7 +147,6 @@
     <!-- Search hamburger menu panel -->
     <dialog class="menu-dialog full-menu extras-menu" id="extras-menu">
       <header class="menu-header">
-        <a class="brand" href="#platform">Example Website</a>
         <button class="button-icon button-close" id="extras-close" title="Close menu"></button>
       </header>
 
@@ -176,16 +168,16 @@
         </div>
 
         <div class="social-links">
-          <a class="social-link" href="#platform" title="LinkedIn" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+          <a class="social-link" href="#platform" title="LinkedIn">
+            <svg viewBox="0 0 24 24">
               <path
                 d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43c-1.14 0-2.06-.93-2.06-2.07 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.07-2.06 2.07Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.23 0Z"
                 fill="currentColor"
               />
             </svg>
           </a>
-          <a class="social-link" href="#platform" title="X" aria-label="X">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+          <a class="social-link" href="#platform" title="X">
+            <svg viewBox="0 0 24 24">
               <path
                 d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93Zm-1.29 19.49h2.04L6.49 3.36H4.3l13.31 17.28Z"
                 fill="currentColor"

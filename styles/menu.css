@@ -1,3 +1,6 @@
+/* dialogとメニュー共通部品 */
+/* Shared dialog and menu parts */
+
 html:has(dialog[open]),
 body:has(dialog[open]) {
   /* ダイアログ表示時の背景スクロール停止 */
@@ -36,7 +39,7 @@ body:has(dialog[open]) {
   }
 
   &::backdrop {
-    background: rgb(32 32 32 / 28%);
+    background: var(--backdrop);
     opacity: 0;
     transition: opacity 0.4s;
   }
@@ -91,12 +94,9 @@ body:has(dialog[open]) {
 
   a,
   summary {
-    border: 0;
-    background: transparent;
     cursor: pointer;
     font-size: 1.125rem;
     font-weight: bold;
-    text-align: left;
   }
 
   > a,
@@ -104,9 +104,8 @@ body:has(dialog[open]) {
     display: flex;
     align-items: center;
     min-height: 48px;
-    padding: 0 16px;
+    padding-inline: 16px;
     border-radius: 8px;
-    text-decoration: none;
     transition: background-color 0.2s;
 
     &:hover {

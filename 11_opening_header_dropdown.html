@@ -4,22 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Opening Pattern: Header Dropdown</title>
-    <link rel="stylesheet" href="common/base.css" />
-    <link rel="stylesheet" href="common/layout.css" />
-    <link rel="stylesheet" href="common/controls.css" />
-    <link rel="stylesheet" href="common/menu.css" />
-    <link rel="stylesheet" href="common/mega-menu.css" />
-    <script src="mega-menu.js" defer></script>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/controls.css" />
+    <link rel="stylesheet" href="styles/menu.css" />
+    <link rel="stylesheet" href="styles/menu-mega.css" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#top">Example Website</a>
       <a class="demo-index-link" href="index.html">Demos</a>
-      <nav class="site-nav">
-        <a href="#news">News</a>
-        <a href="#guides">Guides</a>
-        <a href="#tools">Tools</a>
-      </nav>
       <!-- ハンバーガーメニューボタン -->
       <!-- Hamburger menu button -->
       <button class="button-icon button-menu" popovertarget="mega" title="Open menu"></button>
@@ -86,5 +80,17 @@
         </section>
       </nav>
     </div>
+
+    <script>
+      // メニュー内リンク選択時のpopoverクローズ
+      // Popover close on menu-link selection
+      const menu = document.querySelector("#mega");
+
+      for (const link of menu.querySelectorAll("a[href]")) {
+        link.addEventListener("click", () => {
+          menu.hidePopover();
+        });
+      }
+    </script>
   </body>
 </html>

@@ -4,23 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Opening Pattern: Fullscreen</title>
-    <link rel="stylesheet" href="common/base.css" />
-    <link rel="stylesheet" href="common/layout.css" />
-    <link rel="stylesheet" href="common/controls.css" />
-    <link rel="stylesheet" href="common/menu.css" />
-    <link rel="stylesheet" href="common/fullscreen.css" />
-    <script src="fullscreen-menu.js" defer></script>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/controls.css" />
+    <link rel="stylesheet" href="styles/menu.css" />
+    <link rel="stylesheet" href="styles/menu-fullscreen.css" />
+    <script src="scripts/menu-fullscreen.js" defer></script>
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#work">Example Website</a>
       <a class="demo-index-link" href="index.html">Demos</a>
-      <nav class="site-nav">
-        <a href="#work">Work</a>
-        <a href="#studio">Studio</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
       <!-- ハンバーガーメニューボタン -->
       <!-- Hamburger menu button -->
       <button class="button-icon button-menu" id="fullscreen-open" title="Open menu"></button>
@@ -57,7 +51,6 @@
     <!-- Full-screen hamburger menu panel -->
     <dialog class="menu-dialog full-menu fullscreen-menu" id="menu">
       <header class="menu-header">
-        <a class="brand" href="#work">Example Website</a>
         <button class="button-icon button-close" id="fullscreen-close" title="Close menu"></button>
       </header>
 

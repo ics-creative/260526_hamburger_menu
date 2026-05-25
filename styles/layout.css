@@ -1,3 +1,6 @@
+/* 共通ヘッダーと本文レイアウト */
+/* Shared header and content layout */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -6,14 +9,14 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 16px 24px;
+  height: var(--site-header-height);
+  padding-inline: 24px;
   border-bottom: 1px solid var(--line);
   background: var(--surface);
 }
 
 .brand,
 .demo-index-link,
-.site-nav a,
 .hero a {
   font-weight: bold;
 }
@@ -24,7 +27,6 @@
   border: 1px solid var(--line);
   border-radius: 999px;
   font-size: 0.875rem;
-  text-decoration: none;
   transition:
     background-color 0.2s,
     border-color 0.2s;
@@ -32,27 +34,6 @@
   &:hover {
     border-color: var(--text);
     background-color: var(--bg);
-  }
-}
-
-.site-nav {
-  display: flex;
-  gap: 24px;
-
-  @media (width <= 436px) {
-    display: none;
-  }
-
-  a {
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.2em;
-    transition: text-decoration-color 0.2s;
-
-    &:hover {
-      text-decoration-color: currentColor;
-    }
   }
 }
 
@@ -69,7 +50,7 @@
     font-size: 4rem;
     line-height: 1;
 
-    @media (width <= 436px) {
+    @media (width <= 568px) {
       font-size: 3rem;
     }
   }
@@ -89,10 +70,11 @@
 
 .summary {
   max-width: 720px;
-  padding: 0 24px 48px;
+  padding-block-end: 48px;
+  padding-inline: 24px;
 
   h2 {
-    margin: 0 0 8px;
+    margin-block: 0 8px;
     font-size: 1.5rem;
   }
 
