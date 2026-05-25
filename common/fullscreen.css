@@ -1,5 +1,4 @@
 .full-menu {
-  /* Full-screen variants reuse this viewport-sized dialog base. */
   inset: 0;
   grid-template-rows: auto 1fr auto;
   width: 100vw;
@@ -34,7 +33,6 @@
 }
 
 .large-menu-list {
-  /* Big menu text is reduced on narrow screens. */
   a,
   summary {
     font-size: 4rem;
@@ -46,7 +44,6 @@
 }
 
 .fullscreen-menu {
-  /* This variant turns the dialog into a full viewport menu. */
   grid-template-rows: auto 1fr;
   background: var(--text);
   color: var(--surface);
@@ -66,7 +63,6 @@
 }
 
 .fullscreen-menu-nav {
-  /* Large links make the full-screen menu feel intentional. */
   counter-reset: fullscreen-item;
   display: grid;
   align-content: center;

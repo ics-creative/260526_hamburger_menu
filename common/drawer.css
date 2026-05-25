@@ -1,5 +1,4 @@
 .side-menu {
-  /* The drawer lives on the right edge and slides in. */
   inset: 0 0 0 auto;
   align-content: start;
   grid-template-rows: auto 1fr;
@@ -14,7 +13,8 @@
     width: 100vw;
   }
 
-  /* Covers spring overshoot so the right edge never exposes the page. */
+  /* スプリング跳ね返りの右端カバー */
+  /* Right-edge cover for spring overshoot */
   &::after {
     position: absolute;
     inset: 0 -48px 0 auto;

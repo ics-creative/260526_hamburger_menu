@@ -1,6 +1,7 @@
 .menu-dialog {
   position: fixed;
-  /* Keep layout outside [open] so exit animation does not reflow content. */
+  /* [open]外のレイアウト指定 */
+  /* Layout outside [open] */
   display: grid;
   gap: 16px;
   max-width: none;
@@ -56,14 +57,16 @@
 }
 
 .menu-list {
-  /* The list scrolls, not the animating dialog shell. */
+  /* リスト側スクロール */
+  /* List-owned scrolling */
   display: grid;
   align-content: start;
   gap: 12px;
   min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  /* Dialog stays animatable; this inner area owns scroll chaining. */
+  /* スクロール連鎖の内側管理 */
+  /* Inner scroll containment */
   overscroll-behavior-y: contain;
 
   a,

@@ -1,35 +1,36 @@
-// ページ内のどこをクリックしたかをまとめて監視します。
-// 各メニューのリンクに個別で処理を書く代わりに、ここで一括して扱います。
+// ページ全体のクリック監視。メニューリンク処理の集約
+// Page-wide click listener. Centralized menu-link handling
 document.addEventListener("click", (event) => {
   const target = event.target;
 
-  // event.target は Element 以外になる場合があります。
-  // closest() は Element のメソッドなので、使う前に型を確認します。
+  // Element以外のevent.target対策。closest()使用前の型確認
+  // Guard for non-Element event.target. Type check before closest()
   if (!(target instanceof Element)) {
     return;
   }
 
-  // クリックされた要素自身、またはその親が「メニュー内のリンク」かを探します。
-  // アイコンや文字などリンクの内側をクリックしても、親の a[href] を見つけられます。
+  // クリック位置からのメニューリンク探索。アイコンや文字から親リンクへ探す
+  // Menu-link lookup from the clicked target. Parent-link lookup from icons or text
   const link = target.closest("dialog a[href], [popover] a[href]");
 
-  // メニュー内のリンクではないクリックなら、このファイルでは何もしません。
+  // メニューリンク以外のクリック除外
+  // Ignore clicks outside menu links
   if (!link) {
     return;
   }
 
-  // 見つけたリンクが入っているメニュー本体を探します。
-  // dialog 版のメニューと popover 版のメニューを同じ処理で扱うためです。
+  // リンクを含むメニュー本体の取得。dialogとpopoverの共通処理
+  // Menu container lookup for the matched link. Shared handling for dialog and popover
   const menu = link.closest("dialog, [popover]");
 
-  // dialog 要素は close() で閉じます。
-  // リンクの移動処理はブラウザに任せ、そのあと開いているメニューだけ閉じます。
+  // dialog用のclose()
+  // close() for dialog
   if (menu instanceof HTMLDialogElement) {
     menu.close();
     return;
   }
 
-  // popover 要素は hidePopover() で閉じます。
-  // menu が見つからなかった場合に備えて ?. を使っています。
+  // popover用のhidePopover()
+  // hidePopover() for popover
   menu?.hidePopover();
 });

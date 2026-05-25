@@ -15,12 +15,13 @@
     <header class="site-header">
       <a class="brand" href="#work">Example Website</a>
       <a class="demo-index-link" href="index.html">Demos</a>
-      <!-- Regular links are kept for larger screens. -->
       <nav class="site-nav">
         <a href="#work">Work</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
+      <!-- ハンバーガーメニューボタン -->
+      <!-- Hamburger menu button -->
       <button class="button-icon button-menu" commandfor="drawer" command="show-modal" title="Open menu"></button>
     </header>
 
@@ -42,13 +43,13 @@
       </section>
     </main>
 
-    <!-- The dialog is the actual hamburger menu panel. -->
+    <!-- ドロワー型ハンバーガーメニュー本体 -->
+    <!-- Drawer-style hamburger menu panel -->
     <dialog class="menu-dialog side-menu" id="drawer" closedby="any">
       <header class="menu-header">
         <button class="button-icon button-close" commandfor="drawer" command="close" title="Close menu"></button>
       </header>
 
-      <!-- Menu items are links because they navigate on the page. -->
       <nav class="menu-list">
         <a href="#work">Work</a>
         <a href="#services">Services</a>

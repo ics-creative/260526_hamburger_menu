@@ -1,5 +1,4 @@
 .compact-menu {
-  /* Compact menus behave like a small popover. */
   inset: 88px 24px auto auto;
   width: 288px;
   padding: 8px;
@@ -24,7 +23,6 @@
   }
 
   .menu-list > a {
-    /* Equal padding keeps the small menu balanced. */
     min-height: 0;
     padding: 12px;
     line-height: 1.25;

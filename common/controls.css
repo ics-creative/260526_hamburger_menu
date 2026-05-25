@@ -1,5 +1,4 @@
 .button-icon {
-  /* Shared flat control for open and close buttons. */
   position: relative;
   display: grid;
   place-items: center;
@@ -27,7 +26,8 @@
 }
 
 .button-menu {
-  /* One line plus two shadows makes a simple three-line icon. */
+  /* 三本線アイコン */
+  /* Three-line icon */
   &::before {
     width: 22px;
     height: 2px;
@@ -44,7 +44,6 @@
 }
 
 .button-close {
-  /* The close icon reuses the same pseudo-elements as icon buttons. */
   transition:
     background-color 0.2s,
     rotate 0.2s ease;

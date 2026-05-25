@@ -1,5 +1,4 @@
 .site-header {
-  /* Sticky header keeps the menu trigger in a stable place. */
   position: sticky;
   top: 0;
   z-index: 1;
@@ -41,7 +40,6 @@
   gap: 24px;
 
   @media (width <= 436px) {
-    /* Small screens rely on the hamburger menu instead. */
     display: none;
   }
 

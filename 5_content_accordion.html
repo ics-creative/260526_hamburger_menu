@@ -12,11 +12,11 @@
     <script src="menu.js" defer></script>
     <style>
       .accordion-list {
-        /* Allows details content to animate between 0 and auto. */
+        /* detailsのauto高さアニメーション */
+        /* details auto-height animation */
         interpolate-size: allow-keywords;
 
         details {
-          /* Each details element is one accordion section. */
           border-bottom: 1px solid var(--line);
           padding: 0 0 16px;
 
@@ -46,7 +46,6 @@
         }
 
         summary {
-          /* Summary is the clickable accordion header. */
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -55,7 +54,8 @@
           list-style: none;
 
           &::after {
-            /* CSS mask keeps the arrow out of the HTML. */
+            /* CSS maskの矢印 */
+            /* CSS mask arrow */
             flex: 0 0 auto;
             width: 0.6em;
             height: 0.6em;
@@ -100,6 +100,8 @@
         <a href="#departments">Departments</a>
         <a href="#access">Access</a>
       </nav>
+      <!-- ハンバーガーメニューボタン -->
+      <!-- Hamburger menu button -->
       <button class="button-icon button-menu" commandfor="accordion" command="show-modal" title="Open menu"></button>
     </header>
 
@@ -121,7 +123,8 @@
       </section>
     </main>
 
-    <!-- All details start closed; users choose what to open. -->
+    <!-- アコーディオン型ハンバーガーメニュー本体 -->
+    <!-- Accordion hamburger menu panel -->
     <dialog class="menu-dialog full-menu accordion-menu" id="accordion" closedby="any">
       <header class="menu-header">
         <a class="brand" href="#about">Example Website</a>
