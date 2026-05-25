@@ -14,6 +14,12 @@
   box-sizing: border-box;
 }
 
+html {
+  /* メニュー表示前後のスクロールバー幅確保 */
+  /* Scrollbar gutter for menu open-close */
+  scrollbar-gutter: stable;
+}
+
 body {
   margin: 0;
   background: var(--bg);
@@ -28,9 +34,4 @@ button {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-:focus-visible {
-  outline: 4px solid var(--text);
-  outline-offset: 4px;
 }

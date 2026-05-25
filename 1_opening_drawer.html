@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="common/controls.css" />
     <link rel="stylesheet" href="common/menu.css" />
     <link rel="stylesheet" href="common/drawer.css" />
-    <script src="menu.js" defer></script>
+    <script src="drawer-menu.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -22,7 +22,7 @@
       </nav>
       <!-- ハンバーガーメニューボタン -->
       <!-- Hamburger menu button -->
-      <button class="button-icon button-menu" commandfor="drawer" command="show-modal" title="Open menu"></button>
+      <button class="button-icon button-menu" id="drawer-open" title="Open menu"></button>
     </header>
 
     <main>
@@ -41,13 +41,17 @@
         <h2>Contact</h2>
         <p>Share the project outline through the contact page.</p>
       </section>
+
+      <!-- スクロール検証用の長い本文 -->
+      <!-- Tall content for scroll checks -->
+      <div class="scroll-test-space"></div>
     </main>
 
     <!-- ドロワー型ハンバーガーメニュー本体 -->
     <!-- Drawer-style hamburger menu panel -->
-    <dialog class="menu-dialog side-menu" id="drawer" closedby="any">
+    <dialog class="menu-dialog side-menu" id="drawer">
       <header class="menu-header">
-        <button class="button-icon button-close" commandfor="drawer" command="close" title="Close menu"></button>
+        <button class="button-icon button-close" id="drawer-close" title="Close menu"></button>
       </header>
 
       <nav class="menu-list">

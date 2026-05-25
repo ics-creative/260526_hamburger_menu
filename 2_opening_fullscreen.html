@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="common/controls.css" />
     <link rel="stylesheet" href="common/menu.css" />
     <link rel="stylesheet" href="common/fullscreen.css" />
-    <script src="menu.js" defer></script>
+    <script src="fullscreen-menu.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -23,7 +23,7 @@
       </nav>
       <!-- ハンバーガーメニューボタン -->
       <!-- Hamburger menu button -->
-      <button class="button-icon button-menu" commandfor="menu" command="show-modal" title="Open menu"></button>
+      <button class="button-icon button-menu" id="fullscreen-open" title="Open menu"></button>
     </header>
 
     <main>
@@ -47,14 +47,18 @@
         <h2>Contact</h2>
         <p>Use the project form to start a conversation.</p>
       </section>
+
+      <!-- スクロール検証用の長い本文 -->
+      <!-- Tall content for scroll checks -->
+      <div class="scroll-test-space"></div>
     </main>
 
     <!-- フルスクリーン型ハンバーガーメニュー本体 -->
     <!-- Full-screen hamburger menu panel -->
-    <dialog class="menu-dialog full-menu fullscreen-menu" id="menu" closedby="any">
+    <dialog class="menu-dialog full-menu fullscreen-menu" id="menu">
       <header class="menu-header">
         <a class="brand" href="#work">Example Website</a>
-        <button class="button-icon button-close" commandfor="menu" command="close" title="Close menu"></button>
+        <button class="button-icon button-close" id="fullscreen-close" title="Close menu"></button>
       </header>
 
       <nav class="fullscreen-menu-nav">

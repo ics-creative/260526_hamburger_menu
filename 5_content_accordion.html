@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="common/controls.css" />
     <link rel="stylesheet" href="common/menu.css" />
     <link rel="stylesheet" href="common/fullscreen.css" />
-    <script src="menu.js" defer></script>
+    <script src="accordion-menu.js" defer></script>
     <style>
       .accordion-list {
         /* detailsのauto高さアニメーション */
@@ -83,8 +83,7 @@
           font-weight: normal;
           transition: background-color 0.2s;
 
-          &:hover,
-          &:focus-visible {
+          &:hover {
             background-color: rgb(32 32 32 / 8%);
           }
         }
@@ -102,7 +101,7 @@
       </nav>
       <!-- ハンバーガーメニューボタン -->
       <!-- Hamburger menu button -->
-      <button class="button-icon button-menu" commandfor="accordion" command="show-modal" title="Open menu"></button>
+      <button class="button-icon button-menu" id="accordion-open" title="Open menu"></button>
     </header>
 
     <main>
@@ -121,14 +120,18 @@
         <h2>Access</h2>
         <p>Open Monday to Friday, 9:00 to 17:00.</p>
       </section>
+
+      <!-- スクロール検証用の長い本文 -->
+      <!-- Tall content for scroll checks -->
+      <div class="scroll-test-space"></div>
     </main>
 
     <!-- アコーディオン型ハンバーガーメニュー本体 -->
     <!-- Accordion hamburger menu panel -->
-    <dialog class="menu-dialog full-menu accordion-menu" id="accordion" closedby="any">
+    <dialog class="menu-dialog full-menu accordion-menu" id="accordion">
       <header class="menu-header">
         <a class="brand" href="#about">Example Website</a>
-        <button class="button-icon button-close" commandfor="accordion" command="close" title="Close menu"></button>
+        <button class="button-icon button-close" id="accordion-close" title="Close menu"></button>
       </header>
 
       <div class="menu-list large-menu-list accordion-list">

@@ -1,6 +1,11 @@
 .mega-menu {
-  inset: 80px 24px auto;
+  top: 80px;
+  right: 24px;
+  bottom: auto;
+  left: 24px;
   width: calc(100vw - 48px);
+  height: auto;
+  min-height: 0;
   max-height: calc(100dvh - 104px);
   padding: 24px;
   border-radius: 8px;
@@ -11,7 +16,10 @@
   translate: 0 -16px;
 
   @media (width <= 720px) {
-    inset: 80px 16px auto;
+    top: 80px;
+    right: 16px;
+    bottom: auto;
+    left: 16px;
     width: calc(100vw - 32px);
     max-height: calc(100dvh - 96px);
     padding: 16px;
@@ -25,6 +33,7 @@
     display: grid;
     gap: 0;
     min-height: 0;
+    max-height: inherit;
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior-y: contain;

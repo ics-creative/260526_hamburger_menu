@@ -1,5 +1,15 @@
+html:has(dialog[open]),
+body:has(dialog[open]) {
+  /* ダイアログ表示時の背景スクロール停止 */
+  /* Background scroll lock while dialog opens */
+  overflow: hidden;
+}
+
 .menu-dialog {
+  --menu-interaction-delay: 0s;
+
   position: fixed;
+  z-index: 10;
   /* [open]外のレイアウト指定 */
   /* Layout outside [open] */
   display: grid;
@@ -10,11 +20,15 @@
   padding: 16px 24px;
   border: 0;
   background: var(--surface);
+  interactivity: inert;
+  pointer-events: none;
   transition:
     opacity 0.4s,
     translate 1s var(--spring),
     display 1s allow-discrete,
-    overlay 1s allow-discrete;
+    overlay 1s allow-discrete,
+    interactivity 0s var(--menu-interaction-delay) allow-discrete,
+    pointer-events 0s var(--menu-interaction-delay) allow-discrete;
   transition-behavior: allow-discrete;
 
   &:not([open]):not(:popover-open) {
@@ -29,7 +43,11 @@
 
   &[open],
   &:popover-open {
+    --menu-interaction-delay: 0.4s;
+
+    interactivity: auto;
     opacity: 1;
+    pointer-events: auto;
     translate: 0 0;
 
     &::backdrop {
@@ -41,7 +59,9 @@
 @starting-style {
   .menu-dialog[open],
   .menu-dialog:popover-open {
+    interactivity: inert;
     opacity: 0;
+    pointer-events: none;
   }
 
   .menu-dialog[open]::backdrop,

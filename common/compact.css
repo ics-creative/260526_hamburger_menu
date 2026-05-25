@@ -1,6 +1,13 @@
 .compact-menu {
-  inset: 88px 24px auto auto;
+  top: 88px;
+  right: 24px;
+  bottom: auto;
+  left: auto;
+  display: block;
   width: 288px;
+  height: auto;
+  min-height: 0;
+  max-height: calc(100dvh - 112px);
   padding: 8px;
   border-radius: 8px;
   box-shadow:
@@ -10,7 +17,10 @@
   translate: 0 -8px;
 
   @media (width <= 436px) {
-    inset: 88px 24px auto;
+    top: 88px;
+    right: 24px;
+    bottom: auto;
+    left: 24px;
     width: auto;
   }
 
@@ -20,6 +30,7 @@
 
   .menu-list {
     gap: 4px;
+    max-height: inherit;
   }
 
   .menu-list > a {

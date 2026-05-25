@@ -101,3 +101,9 @@
     font-size: 1rem;
   }
 }
+
+.scroll-test-space {
+  /* スクロール検証用の本文高さ */
+  /* Content height for scroll checks */
+  min-height: 140vh;
+}
