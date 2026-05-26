@@ -12,28 +12,28 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#intro">Example Website</a>
+      <a class="brand" href="#">Example Website</a>
       <a class="demo-index-link" href="index.html">Demos</a>
       <!-- ハンバーガーメニューボタン -->
       <!-- Hamburger menu button -->
-      <button class="button-icon button-menu" popovertarget="compact" title="Open menu"></button>
+      <button class="button-icon button-menu" popovertarget="menu-compact" title="Open menu"></button>
     </header>
 
     <main>
-      <section class="hero" id="intro">
-        <p>Small publication</p>
-        <h1>A compact menu for simple pages.</h1>
-        <a href="#issues">Read issues</a>
+      <section class="hero">
+        <p>Popover pattern</p>
+        <h1>Compact Menu</h1>
+        <a href="#">Issues</a>
       </section>
 
-      <section class="summary" id="issues">
+      <section class="summary">
         <h2>Issues</h2>
-        <p>Short essays, interviews, and notes from independent makers.</p>
+        <p>Issue archive.</p>
       </section>
 
-      <section class="summary" id="contact">
+      <section class="summary">
         <h2>Contact</h2>
-        <p>Send a note through the contact page.</p>
+        <p>Contact details.</p>
       </section>
 
       <!-- スクロール検証用の長い本文 -->
@@ -43,18 +43,18 @@
 
     <!-- コンパクト型ハンバーガーメニュー本体 -->
     <!-- Compact hamburger menu panel -->
-    <div class="menu-dialog compact-menu" id="compact" popover>
+    <div class="menu-dialog compact-menu" id="menu-compact" popover>
       <nav class="menu-list">
-        <a href="#intro">Intro</a>
-        <a href="#issues">Issues</a>
-        <a href="#contact">Contact</a>
+        <a href="#">Intro</a>
+        <a href="#">Issues</a>
+        <a href="#">Contact</a>
       </nav>
     </div>
 
     <script>
       // メニュー内リンク選択時のpopoverクローズ
       // Popover close on menu-link selection
-      const menu = document.querySelector("#compact");
+      const menu = document.querySelector("#menu-compact");
 
       for (const link of menu.querySelectorAll("a[href]")) {
         link.addEventListener("click", () => {

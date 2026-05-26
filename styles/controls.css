@@ -4,9 +4,10 @@
 .button-icon {
   position: relative;
   display: grid;
+  flex: 0 0 48px;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  inline-size: 48px;
+  block-size: 48px;
   border: 0;
   border-radius: 50%;
   background: transparent;
@@ -17,6 +18,8 @@
     background-color: var(--bg);
   }
 
+  /* 文字なしボタンの疑似要素アイコン */
+  /* Pseudo-element icon for textless buttons */
   &::before,
   &::after {
     position: absolute;
@@ -29,10 +32,10 @@
 }
 
 .button-menu {
-  /* 三本線アイコン */
-  /* Three-line icon */
+  /* ::before本体とbox-shadowによる三本線 */
+  /* Three lines from ::before and box-shadow */
   &::before {
-    width: 22px;
+    width: 24px;
     height: 2px;
     border-radius: 20px;
     background: currentColor;
@@ -42,6 +45,8 @@
   }
 
   &::after {
+    /* 三本線では不要な二本目疑似要素 */
+    /* Unused second pseudo-element for the three-line icon */
     content: none;
   }
 }
@@ -55,6 +60,8 @@
     rotate: 90deg;
   }
 
+  /* ::beforeと::afterの交差による×印 */
+  /* X mark from crossed ::before and ::after */
   &::before {
     rotate: 45deg;
   }

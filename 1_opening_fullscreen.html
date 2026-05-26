@@ -9,37 +9,37 @@
     <link rel="stylesheet" href="styles/controls.css" />
     <link rel="stylesheet" href="styles/menu.css" />
     <link rel="stylesheet" href="styles/menu-fullscreen.css" />
-    <script src="scripts/menu-fullscreen.js" defer></script>
+    <script src="scripts/menu.js" defer></script>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#work">Example Website</a>
+      <a class="brand" href="#">Example Website</a>
       <a class="demo-index-link" href="index.html">Demos</a>
       <!-- ハンバーガーメニューボタン -->
       <!-- Hamburger menu button -->
-      <button class="button-icon button-menu" id="fullscreen-open" title="Open menu"></button>
+      <button class="button-icon button-menu" id="button-open" title="Open menu"></button>
     </header>
 
     <main>
-      <section class="hero" id="work">
-        <p>Digital practice</p>
-        <h1>Useful websites with calm navigation.</h1>
-        <a href="#contact">Plan a launch</a>
+      <section class="hero">
+        <p>Opening pattern</p>
+        <h1>Fullscreen Menu</h1>
+        <a href="#">Contact</a>
       </section>
 
-      <section class="summary" id="studio">
+      <section class="summary">
         <h2>Studio</h2>
-        <p>We build lean product pages, editorial systems, and interface prototypes.</p>
+        <p>Studio profile.</p>
       </section>
 
-      <section class="summary" id="services">
+      <section class="summary">
         <h2>Services</h2>
-        <p>Product websites, launch systems, and interface prototypes.</p>
+        <p>Service list.</p>
       </section>
 
-      <section class="summary" id="contact">
+      <section class="summary">
         <h2>Contact</h2>
-        <p>Use the project form to start a conversation.</p>
+        <p>Contact details.</p>
       </section>
 
       <!-- スクロール検証用の長い本文 -->
@@ -51,22 +51,14 @@
     <!-- Full-screen hamburger menu panel -->
     <dialog class="menu-dialog full-menu fullscreen-menu" id="menu">
       <header class="menu-header">
-        <button class="button-icon button-close" id="fullscreen-close" title="Close menu"></button>
+        <button class="button-icon button-close" id="button-close" title="Close menu"></button>
       </header>
 
       <nav class="fullscreen-menu-nav">
-        <a href="#work">
-          <span>Work</span>
-        </a>
-        <a href="#studio">
-          <span>Studio</span>
-        </a>
-        <a href="#services">
-          <span>Services</span>
-        </a>
-        <a href="#contact">
-          <span>Contact</span>
-        </a>
+        <a href="#"><span>Work</span></a>
+        <a href="#"><span>Studio</span></a>
+        <a href="#"><span>Services</span></a>
+        <a href="#"><span>Contact</span></a>
       </nav>
     </dialog>
   </body>

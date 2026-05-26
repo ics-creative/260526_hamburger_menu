@@ -17,23 +17,24 @@
         padding-inline: 24px;
       }
 
-      .demo-section,
+      .demo-section {
+        display: grid;
+        gap: 12px;
+
+        h2 {
+          margin: 0;
+          font-size: 1.5rem;
+        }
+      }
+
       .demo-group {
         display: grid;
         gap: 12px;
-      }
 
-      .demo-section h2,
-      .demo-group h3 {
-        margin: 0;
-      }
-
-      .demo-section h2 {
-        font-size: 1.5rem;
-      }
-
-      .demo-group h3 {
-        font-size: 1rem;
+        h3 {
+          margin: 0;
+          font-size: 1rem;
+        }
       }
 
       .demo-list {
@@ -84,8 +85,8 @@
         <section class="demo-section">
           <h2>Inside the menu</h2>
           <nav class="demo-list">
-            <a href="3_content_accordion.html">Accordion</a>
-            <a href="4_content_extras.html">Search, contact, SNS</a>
+            <a href="3_content_accordion.html">Example: Accordion</a>
+            <a href="4_content_extras.html">Example: Search form</a>
           </nav>
         </section>
 

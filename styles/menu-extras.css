@@ -1,0 +1,107 @@
+/* 検索と連絡先付きメニュー */
+/* Search and contact menu */
+
+.extras-menu {
+  grid-template-rows: var(--site-header-height) auto minmax(0, 1fr) auto;
+  gap: 24px;
+  padding-block-end: 48px;
+
+  .extras-list {
+    align-content: start;
+  }
+}
+
+.menu-search {
+  display: grid;
+  gap: 12px;
+
+  label {
+    font-weight: bold;
+  }
+
+  input {
+    min-height: 48px;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font: inherit;
+    transition:
+      background-color 0.2s,
+      border-color 0.2s;
+
+    &:hover {
+      background-color: var(--bg);
+      border-color: var(--text);
+    }
+  }
+}
+
+.extras-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-block-start: 8px;
+
+  @media (width <= 568px) {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+.extras-actions {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @media (width <= 568px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.action-button {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  padding-inline: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  font-weight: bold;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+
+  &:hover {
+    background-color: var(--bg);
+    border-color: var(--text);
+  }
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-link {
+  display: grid;
+  place-items: center;
+  inline-size: 48px;
+  block-size: 48px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+
+  &:hover {
+    background-color: var(--bg);
+    border-color: var(--text);
+  }
+
+  img {
+    inline-size: 20px;
+    block-size: 20px;
+  }
+}

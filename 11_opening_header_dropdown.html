@@ -12,33 +12,33 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top">Example Website</a>
+      <a class="brand" href="#">Example Website</a>
       <a class="demo-index-link" href="index.html">Demos</a>
       <!-- ハンバーガーメニューボタン -->
       <!-- Hamburger menu button -->
-      <button class="button-icon button-menu" popovertarget="mega" title="Open menu"></button>
+      <button class="button-icon button-menu" popovertarget="menu-mega" title="Open menu"></button>
     </header>
 
     <main>
-      <section class="hero" id="top">
-        <p>Media catalog</p>
-        <h1>Many categories, one readable menu.</h1>
-        <a href="#news">Browse latest</a>
+      <section class="hero">
+        <p>Popover pattern</p>
+        <h1>Header Dropdown</h1>
+        <a href="#">News</a>
       </section>
 
-      <section class="summary" id="news">
+      <section class="summary">
         <h2>News</h2>
-        <p>Daily reports across business, culture, technology, and local markets.</p>
+        <p>Top stories and reports.</p>
       </section>
 
-      <section class="summary" id="guides">
+      <section class="summary">
         <h2>Guides</h2>
-        <p>Practical buying guides, city references, research notes, and explainers.</p>
+        <p>Guides and explainers.</p>
       </section>
 
-      <section class="summary" id="tools">
+      <section class="summary">
         <h2>Tools</h2>
-        <p>Calculators, templates, market data, and watchlists for repeat workflows.</p>
+        <p>Calculators and templates.</p>
       </section>
 
       <!-- スクロール検証用の長い本文 -->
@@ -48,35 +48,35 @@
 
     <!-- メガメニュー型ハンバーガーメニュー本体 -->
     <!-- Mega-menu hamburger menu panel -->
-    <div class="menu-dialog mega-menu" id="mega" popover>
+    <div class="menu-dialog mega-menu" id="menu-mega" popover>
       <nav class="mega-grid">
         <section>
           <h2>News</h2>
-          <a href="#news">Top stories</a>
-          <a href="#news">Business</a>
-          <a href="#news">Technology</a>
-          <a href="#news">Culture</a>
+          <a href="#">Top stories</a>
+          <a href="#">Business</a>
+          <a href="#">Technology</a>
+          <a href="#">Culture</a>
         </section>
         <section>
           <h2>Guides</h2>
-          <a href="#guides">Buying guides</a>
-          <a href="#guides">City guides</a>
-          <a href="#guides">Research notes</a>
-          <a href="#guides">Explainers</a>
+          <a href="#">Buying guides</a>
+          <a href="#">City guides</a>
+          <a href="#">Research notes</a>
+          <a href="#">Explainers</a>
         </section>
         <section>
           <h2>Tools</h2>
-          <a href="#tools">Calculators</a>
-          <a href="#tools">Templates</a>
-          <a href="#tools">Market data</a>
-          <a href="#tools">Watchlists</a>
+          <a href="#">Calculators</a>
+          <a href="#">Templates</a>
+          <a href="#">Market data</a>
+          <a href="#">Watchlists</a>
         </section>
         <section>
           <h2>Topics</h2>
-          <a href="#news">Retail</a>
-          <a href="#news">Hospitality</a>
-          <a href="#news">Media</a>
-          <a href="#news">Startups</a>
+          <a href="#">Retail</a>
+          <a href="#">Hospitality</a>
+          <a href="#">Media</a>
+          <a href="#">Startups</a>
         </section>
       </nav>
     </div>
@@ -84,7 +84,7 @@
     <script>
       // メニュー内リンク選択時のpopoverクローズ
       // Popover close on menu-link selection
-      const menu = document.querySelector("#mega");
+      const menu = document.querySelector("#menu-mega");
 
       for (const link of menu.querySelectorAll("a[href]")) {
         link.addEventListener("click", () => {

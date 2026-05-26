@@ -18,24 +18,22 @@
   &[open] {
     opacity: 1;
     translate: 0 0;
+
+    @starting-style {
+      opacity: 0;
+      translate: 0 -24px;
+    }
   }
-}
 
-@starting-style {
-  .full-menu[open] {
-    opacity: 0;
-    translate: 0 -24px;
+  .menu-list {
+    overflow: visible;
+    overscroll-behavior-y: auto;
   }
-}
 
-.full-menu .menu-list {
-  overflow: visible;
-  overscroll-behavior-y: auto;
-}
-
-.full-menu .menu-header {
-  min-height: var(--site-header-height);
-  justify-content: flex-end;
+  .menu-header {
+    min-height: var(--site-header-height);
+    justify-content: flex-end;
+  }
 }
 
 .large-menu-list {
@@ -53,85 +51,82 @@
   grid-template-rows: var(--site-header-height) minmax(0, 1fr);
   overflow-x: hidden;
   overflow-y: auto;
-}
 
-.fullscreen-menu-nav {
-  counter-reset: fullscreen-item;
-  display: grid;
-  align-content: start;
-  gap: 0;
-  padding-block: 24px;
+  &[open],
+  &:popover-open {
+    .fullscreen-menu-nav {
+      a {
+        @starting-style {
+          opacity: 0;
+          translate: calc((var(--menu-index) - 1) * 24px) 0;
+        }
+      }
+    }
 
-  a {
-    --menu-index: 1;
+    @supports (width: calc(sibling-index() * 1px)) {
+      .fullscreen-menu-nav {
+        a {
+          @starting-style {
+            translate: calc((sibling-index() - 1) * 24px) 0;
+          }
+        }
+      }
+    }
+  }
 
-    counter-increment: fullscreen-item;
+  .fullscreen-menu-nav {
+    counter-reset: fullscreen-item;
     display: grid;
-    grid-template-columns: 3rem minmax(0, 1fr);
-    align-items: baseline;
-    gap: 24px;
-    padding-block: 16px;
-    border-bottom: 1px solid var(--line);
-    border-radius: 0;
-    font-size: 5rem;
-    font-weight: bold;
-    line-height: 0.95;
-    translate: 0 0;
-    transition:
-      opacity 0.35s ease,
-      translate 0.35s ease,
-      background-color 0.2s,
-      padding-inline 0.2s;
-    transition-delay:
-      calc((var(--menu-index) - 1) * 45ms),
-      calc((var(--menu-index) - 1) * 45ms),
-      0s,
-      0s;
+    align-content: start;
+    gap: 0;
+    padding-block: 24px;
 
-    &:hover {
-      background-color: var(--bg);
-      padding-inline: 16px;
-    }
-
-    @media (width <= 720px) {
-      grid-template-columns: 2rem minmax(0, 1fr);
-      gap: 16px;
-      font-size: 3.25rem;
-    }
-  }
-
-  a::before {
-    content: counter(fullscreen-item, decimal-leading-zero);
-    font-size: 1rem;
-    line-height: 1;
-  }
-
-  @supports (width: calc(sibling-index() * 1px)) {
     a {
-      --menu-index: sibling-index();
-    }
-  }
-}
+      --menu-index: 1;
 
-@starting-style {
-  .fullscreen-menu[open] .fullscreen-menu-nav a {
-    opacity: 0;
-    translate: calc((var(--menu-index) - 1) * 24px) 0;
-  }
-}
+      counter-increment: fullscreen-item;
+      display: grid;
+      grid-template-columns: 3rem minmax(0, 1fr);
+      align-items: baseline;
+      gap: 24px;
+      padding-block: 16px;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      font-size: 5rem;
+      font-weight: bold;
+      line-height: 1;
+      translate: 0 0;
+      transition:
+        opacity 0.4s ease,
+        translate 0.4s ease,
+        background-color 0.2s,
+        padding-inline 0.2s;
+      transition-delay:
+        calc((var(--menu-index) - 1) * 50ms),
+        calc((var(--menu-index) - 1) * 50ms),
+        0s,
+        0s;
 
-@starting-style {
-  .fullscreen-menu:popover-open .fullscreen-menu-nav a {
-    opacity: 0;
-    translate: calc((var(--menu-index) - 1) * 24px) 0;
-  }
-}
+      &::before {
+        content: counter(fullscreen-item, decimal-leading-zero);
+        font-size: 1rem;
+        line-height: 1;
+      }
 
-@supports (width: calc(sibling-index() * 1px)) {
-  @starting-style {
-    .fullscreen-menu[open] .fullscreen-menu-nav a,
-    .fullscreen-menu:popover-open .fullscreen-menu-nav a {
-      translate: calc((sibling-index() - 1) * 24px) 0;
+      &:hover {
+        background-color: var(--bg);
+        padding-inline: 16px;
+      }
+
+      @supports (width: calc(sibling-index() * 1px)) {
+        --menu-index: sibling-index();
+      }
+
+      @media (width <= 720px) {
+        grid-template-columns: 2rem minmax(0, 1fr);
+        gap: 16px;
+        font-size: 3rem;
+      }
     }
   }
 }

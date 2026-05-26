@@ -1,80 +1,82 @@
 /* ドロワー型メニュー */
 /* Drawer menu */
 
-body:has(.side-menu[open]) .site-header {
-  /* ドロワー背面に残す共通ヘッダー */
-  /* Shared header kept behind the drawer */
-  position: fixed;
-  inset-block-start: 0;
-  inset-inline: 0;
-}
+body:has(.side-menu[open]) {
+  .site-header {
+    /* ドロワー背面に残す共通ヘッダー */
+    /* Shared header kept behind the drawer */
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline: 0;
+  }
 
-body:has(.side-menu[open]) main {
-  /* fixed化したヘッダー分の本文位置補正 */
-  /* Content offset for the fixed header */
-  margin-block-start: var(--site-header-height);
+  main {
+    /* fixed化したヘッダー分の本文位置補正 */
+    /* Content offset for the fixed header */
+    margin-block-start: var(--site-header-height);
+  }
 }
 
 .side-menu {
-  --menu-interaction-delay: 1s;
-
   inset: 0;
   justify-items: end;
-  width: 100vw;
-  height: 100dvh;
+  inline-size: 100%;
+  block-size: 100dvh;
   overflow: hidden;
   padding: 0;
   background: transparent;
   opacity: 0;
 
   &[open] {
+    --menu-interaction-delay: 1s;
+
     opacity: 1;
+
+    @starting-style {
+      opacity: 0;
+    }
+
+    .side-menu-panel {
+      translate: 0 0;
+
+      @starting-style {
+        translate: 100% 0;
+      }
+    }
   }
-}
 
-.side-menu-panel {
-  position: relative;
-  display: grid;
-  align-content: start;
-  grid-template-rows: var(--site-header-height) minmax(0, 1fr);
-  width: 440px;
-  height: 100%;
-  padding-inline: 24px;
-  border-left: 1px solid var(--line);
-  background: var(--surface);
-  translate: 100% 0;
-  transition: translate 1s var(--spring);
+  > .button-close {
+    /* 三本線ボタンと同じ位置 */
+    /* Same position as the hamburger button */
+    position: fixed;
+    inset-block-start: 16px;
+    inset-inline-end: 24px;
+  }
 
-  /* スプリング跳ね返りの右端カバー */
-  /* Right-edge cover for spring overshoot */
-  &::after {
-    position: absolute;
-    inset: 0 -48px 0 auto;
-    width: 48px;
+  .side-menu-panel {
+    position: relative;
+    display: grid;
+    align-content: start;
+    inline-size: min(440px, 100%);
+    block-size: 100%;
+    overflow: visible;
+    padding-block: var(--site-header-height) 24px;
+    padding-inline: 24px;
+    border-left: 1px solid var(--line);
     background: var(--surface);
-    content: "";
-  }
-
-  .side-menu[open] & {
-    translate: 0 0;
-  }
-
-  .menu-header {
-    min-height: var(--site-header-height);
-    justify-content: flex-end;
-  }
-
-  @media (width <= 568px) {
-    width: 100vw;
-  }
-}
-
-@starting-style {
-  .side-menu[open] {
-    opacity: 0;
-  }
-
-  .side-menu[open] .side-menu-panel {
     translate: 100% 0;
+    transition: translate 1s var(--spring);
+
+    /* スプリング時の右端の白い受け */
+    /* Right-side surface for spring overshoot */
+    &::after {
+      position: absolute;
+      inset-block: 0;
+      inset-inline-end: -128px;
+      inline-size: 128px;
+      background: var(--surface);
+      content: "";
+      pointer-events: none;
+    }
   }
 }

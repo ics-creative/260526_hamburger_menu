@@ -9,32 +9,32 @@
     <link rel="stylesheet" href="styles/controls.css" />
     <link rel="stylesheet" href="styles/menu.css" />
     <link rel="stylesheet" href="styles/menu-drawer.css" />
-    <script src="scripts/menu-drawer.js" defer></script>
+    <script src="scripts/menu.js" defer></script>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#work">Example Website</a>
+      <a class="brand" href="#">Example Website</a>
       <a class="demo-index-link" href="index.html">Demos</a>
       <!-- ハンバーガーメニューボタン -->
       <!-- Hamburger menu button -->
-      <button class="button-icon button-menu" id="drawer-open" title="Open menu"></button>
+      <button class="button-icon button-menu" id="button-open" title="Open menu"></button>
     </header>
 
     <main>
-      <section class="hero" id="work">
-        <p>Independent studio</p>
-        <h1>Quiet websites for focused teams.</h1>
-        <a href="#contact">Start a project</a>
+      <section class="hero">
+        <p>Opening pattern</p>
+        <h1>Drawer Menu</h1>
+        <a href="#">Contact</a>
       </section>
 
-      <section class="summary" id="services">
+      <section class="summary">
         <h2>Services</h2>
-        <p>Design systems, product websites, and fast front-end prototypes.</p>
+        <p>Service list.</p>
       </section>
 
-      <section class="summary" id="contact">
+      <section class="summary">
         <h2>Contact</h2>
-        <p>Share the project outline through the contact page.</p>
+        <p>Contact details.</p>
       </section>
 
       <!-- スクロール検証用の長い本文 -->
@@ -44,18 +44,16 @@
 
     <!-- ドロワー型ハンバーガーメニュー本体 -->
     <!-- Drawer-style hamburger menu panel -->
-    <dialog class="menu-dialog side-menu" id="drawer">
+    <dialog class="menu-dialog side-menu" id="menu">
       <div class="side-menu-panel">
-        <header class="menu-header">
-          <button class="button-icon button-close" id="drawer-close" title="Close menu"></button>
-        </header>
-
         <nav class="menu-list">
-          <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
+          <a href="#">Work</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
         </nav>
       </div>
+
+      <button class="button-icon button-close" id="button-close" title="Close menu"></button>
     </dialog>
   </body>
 </html>
