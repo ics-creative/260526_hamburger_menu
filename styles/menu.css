@@ -3,7 +3,7 @@
 
 body:has(dialog[open]) {
   /* ダイアログ表示時の背景スクロール停止 */
-  /* Background scroll lock while dialog opens */
+  /* Background scroll lock while dialog is open */
   overflow: hidden;
 }
 
