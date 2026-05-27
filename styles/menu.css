@@ -25,9 +25,9 @@ body:has(dialog[open]) {
   pointer-events: none;
   transition:
     opacity 0.4s,
-    translate 1s var(--spring),
-    display 1s allow-discrete,
-    overlay 1s allow-discrete,
+    translate 0.4s ease,
+    display 0.4s allow-discrete,
+    overlay 0.4s allow-discrete,
     interactivity 0s var(--menu-interaction-delay) allow-discrete,
     pointer-events 0s var(--menu-interaction-delay) allow-discrete;
   transition-behavior: allow-discrete;
