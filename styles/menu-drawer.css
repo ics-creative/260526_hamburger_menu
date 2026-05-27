@@ -10,15 +10,15 @@
   grid-template-rows: auto 1fr;
   align-content: start;
   gap: 16px;
-  width: min(440px, 100vw);
-  inline-size: min(440px, 100vw);
+  width: 440px;
+  inline-size: 440px;
   height: 100dvh;
   block-size: 100dvh;
   overflow: visible;
   padding: 16px;
   border-left: 1px solid var(--line);
   background: var(--surface);
-  translate: calc(100%) 0;
+  translate: 640px 0;
   transition:
     translate 1s var(--spring),
     display 1s allow-discrete,
@@ -50,6 +50,12 @@
     align-content: start;
   }
 
+  @media (width <= 568px) {
+    inset-inline-start: 64px;
+    width: auto;
+    inline-size: auto;
+  }
+
   &[open] {
     --menu-interaction-delay: 1s;
 
@@ -57,7 +63,7 @@
     translate: 0 0;
 
     @starting-style {
-      translate: calc(100%) 0;
+      translate: 640px 0;
     }
 
     &::backdrop {
