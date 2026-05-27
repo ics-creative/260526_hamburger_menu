@@ -15,6 +15,10 @@
   opacity: 0;
   translate: 0 -24px;
 
+  &::backdrop {
+    background: transparent;
+  }
+
   &[open] {
     opacity: 1;
     translate: 0 0;
