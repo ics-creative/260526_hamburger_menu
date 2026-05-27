@@ -82,8 +82,10 @@
           font-weight: normal;
           transition: background-color 0.2s;
 
-          &:hover {
-            background-color: rgb(32 32 32 / 10%);
+          @media (any-hover: hover) {
+            &:hover {
+              background-color: rgb(32 32 32 / 10%);
+            }
           }
         }
       }

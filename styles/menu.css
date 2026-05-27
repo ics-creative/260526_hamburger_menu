@@ -101,8 +101,10 @@ body:has(dialog[open]) {
     border-radius: 8px;
     transition: background-color 0.2s;
 
-    &:hover {
-      background-color: var(--bg);
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: var(--bg);
+      }
     }
   }
 }

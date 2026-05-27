@@ -14,8 +14,10 @@
   cursor: pointer;
   transition: background-color 0.2s;
 
-  &:hover {
-    background-color: var(--bg);
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--bg);
+    }
   }
 
   /* 文字なしボタンの疑似要素アイコン */
@@ -56,8 +58,10 @@
     background-color 0.2s,
     rotate 0.2s ease;
 
-  &:hover {
-    rotate: 90deg;
+  @media (any-hover: hover) {
+    &:hover {
+      rotate: 90deg;
+    }
   }
 
   /* ::beforeと::afterの交差による×印 */

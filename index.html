@@ -51,9 +51,11 @@
             background-color 0.2s,
             border-color 0.2s;
 
-          &:hover {
-            background-color: var(--bg);
-            border-color: var(--text);
+          @media (any-hover: hover) {
+            &:hover {
+              background-color: var(--bg);
+              border-color: var(--text);
+            }
           }
         }
       }

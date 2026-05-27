@@ -29,9 +29,11 @@
     background-color 0.2s,
     border-color 0.2s;
 
-  &:hover {
-    border-color: var(--text);
-    background-color: var(--bg);
+  @media (any-hover: hover) {
+    &:hover {
+      border-color: var(--text);
+      background-color: var(--bg);
+    }
   }
 }
 
@@ -56,8 +58,10 @@
     text-underline-offset: 0.2em;
     transition: text-decoration-color 0.2s;
 
-    &:hover {
-      text-decoration-color: currentColor;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration-color: currentColor;
+      }
     }
   }
 }

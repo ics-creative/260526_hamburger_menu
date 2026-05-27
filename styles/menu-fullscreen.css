@@ -113,9 +113,11 @@
         line-height: 1;
       }
 
-      &:hover {
-        background-color: var(--bg);
-        padding-inline: 16px;
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: var(--bg);
+          padding-inline: 16px;
+        }
       }
 
       @supports (width: calc(sibling-index() * 1px)) {
