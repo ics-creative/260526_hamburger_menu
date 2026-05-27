@@ -80,7 +80,6 @@ body:has(dialog[open]) {
   align-content: start;
   gap: 12px;
   min-height: 0;
-  overflow-x: hidden;
   overflow-y: auto;
   /* スクロール連鎖の内側管理 */
   /* Inner scroll containment */

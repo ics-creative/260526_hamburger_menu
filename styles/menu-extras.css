@@ -2,12 +2,33 @@
 /* Search and contact menu */
 
 .extras-menu {
-  grid-template-rows: var(--site-header-height) auto minmax(0, 1fr) auto;
-  gap: 24px;
-  padding-block-end: 48px;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  gap: 16px;
+  padding-block-end: 24px;
+
+  .menu-header {
+    min-height: 64px;
+  }
+
+  .menu-search {
+    align-self: start;
+  }
 
   .extras-list {
     align-content: start;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+
+    a {
+      min-height: 56px;
+      font-size: 2rem;
+      line-height: 1.1;
+
+      @media (width <= 568px) {
+        font-size: 1.75rem;
+      }
+    }
   }
 }
 
