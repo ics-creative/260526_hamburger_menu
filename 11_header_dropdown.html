@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Header Dropdown Menu</title>
+    <title>Mega Menu</title>
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/layout.css" />
     <link rel="stylesheet" href="styles/controls.css" />
@@ -21,29 +21,17 @@
 
     <main>
       <section class="hero">
-        <p>Popover pattern</p>
-        <h1>Header Dropdown</h1>
-        <a href="#">News</a>
-      </section>
-
-      <section class="summary">
-        <h2>News</h2>
-        <p>Top stories and reports.</p>
-      </section>
-
-      <section class="summary">
-        <h2>Guides</h2>
-        <p>Guides and explainers.</p>
-      </section>
-
-      <section class="summary">
-        <h2>Tools</h2>
-        <p>Calculators and templates.</p>
+        <h1>Mega Menu</h1>
+        <p>A mega menu that opens below the shared header.</p>
       </section>
 
       <!-- スクロール検証用の長い本文 -->
       <!-- Tall content for scroll checks -->
       <div class="scroll-test-space"></div>
+
+      <footer class="demo-footer">
+        <small>&copy; 2026 ICS INC.</small>
+      </footer>
     </main>
 
     <!-- メガメニュー型ハンバーガーメニュー本体 -->
@@ -83,7 +71,7 @@
 
     <script>
       // メニュー内リンク選択時のpopoverクローズ
-      // Popover close on menu-link selection
+      // Close the popover when a menu link is selected.
       const menu = document.querySelector("#menu-mega");
 
       for (const link of menu.querySelectorAll("a[href]")) {

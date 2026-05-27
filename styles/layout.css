@@ -1,5 +1,5 @@
 /* 共通ヘッダーと本文レイアウト */
-/* Shared header and content layout */
+/* Shared header and page layout */
 
 .site-header {
   position: sticky;
@@ -85,4 +85,9 @@
   /* スクロール検証用の本文高さ */
   /* Content height for scroll checks */
   min-height: 140vh;
+}
+
+.demo-footer {
+  padding: 24px;
+  color: rgb(34 34 34 / 70%);
 }
