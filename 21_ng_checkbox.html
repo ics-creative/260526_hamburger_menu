@@ -93,24 +93,19 @@
   </head>
   <body>
     <!-- NG: the checkbox state is used as the menu state. -->
-    <input class="menu-toggle" id="menu-toggle" type="checkbox" />
+    <input id="menu-toggle" class="menu-toggle" type="checkbox" />
 
     <header class="site-header">
       <a class="brand" href="#">Example Website</a>
-      <a class="demo-index-link" href="index.html">Demos</a>
-      <label class="button-icon button-menu" for="menu-toggle" title="Open menu"></label>
+      <label class="button-icon button-menu" for="menu-toggle" title="Menu"></label>
     </header>
 
     <main>
       <section class="hero">
         <h1>Checkbox hack menu</h1>
         <p>An anti-pattern that uses checkbox state to show and hide the menu.</p>
+        <a href="index.html">Back to Index</a>
         <a href="#">Background link</a>
-      </section>
-
-      <section class="summary">
-        <h2>Background focus target</h2>
-        <p><a href="#">Second background link</a></p>
       </section>
 
       <div class="scroll-test-space"></div>
@@ -122,7 +117,7 @@
 
     <div class="menu-checkbox">
       <header class="menu-header">
-        <label class="button-icon button-close" for="menu-toggle" title="Close menu"></label>
+        <label class="button-icon button-close" for="menu-toggle" title="Close"></label>
       </header>
 
       <nav class="menu-fullscreen-nav">

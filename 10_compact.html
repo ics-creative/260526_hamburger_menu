@@ -13,16 +13,16 @@
   <body>
     <header class="site-header">
       <a class="brand" href="#">Example Website</a>
-      <a class="demo-index-link" href="index.html">Demos</a>
       <!-- ハンバーガーメニューボタン -->
       <!-- Hamburger menu button -->
-      <button class="button-icon button-menu" popovertarget="menu-compact" title="Open menu"></button>
+      <button class="button-icon button-menu" popovertarget="menu-compact" title="Menu"></button>
     </header>
 
     <main>
       <section class="hero">
         <h1>Compact Menu</h1>
         <p>A compact navigation menu displayed as a small popover.</p>
+        <a href="index.html">Back to Index</a>
       </section>
 
       <!-- スクロール検証用の長い本文 -->
@@ -36,7 +36,7 @@
 
     <!-- コンパクト型ハンバーガーメニュー本体 -->
     <!-- Compact hamburger menu panel -->
-    <div class="menu-dialog menu-compact" id="menu-compact" popover>
+    <div id="menu-compact" class="menu-dialog menu-compact" popover>
       <nav class="menu-list">
         <a href="#">Intro</a>
         <a href="#">Issues</a>

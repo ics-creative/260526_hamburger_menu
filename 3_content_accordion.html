@@ -94,16 +94,16 @@
   <body>
     <header class="site-header">
       <a class="brand" href="#">Example Website</a>
-      <a class="demo-index-link" href="index.html">Demos</a>
       <!-- ハンバーガーメニューボタン -->
       <!-- Hamburger menu button -->
-      <button class="button-icon button-menu" id="button-open" title="Open menu"></button>
+      <button id="button-open" class="button-icon button-menu" title="Menu"></button>
     </header>
 
     <main>
       <section class="hero">
         <h1>Accordion Menu</h1>
         <p>A navigation menu with accordion sections.</p>
+        <a href="index.html">Back to Index</a>
       </section>
 
       <!-- スクロール検証用の長い本文 -->
@@ -117,9 +117,9 @@
 
     <!-- アコーディオン型ハンバーガーメニュー本体 -->
     <!-- Accordion hamburger menu panel -->
-    <dialog class="menu-dialog menu-full menu-accordion" id="menu">
+    <dialog id="menu" class="menu-dialog menu-full menu-accordion">
       <header class="menu-header">
-        <button class="button-icon button-close" id="button-close" title="Close menu"></button>
+        <button id="button-close" class="button-icon button-close" title="Close"></button>
       </header>
 
       <div class="menu-list menu-list-large menu-accordion-list">

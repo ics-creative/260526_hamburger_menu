@@ -81,20 +81,15 @@
   <body>
     <header class="site-header">
       <a class="brand" href="#">Example Website</a>
-      <a class="demo-index-link" href="index.html">Demos</a>
-      <button class="button-icon button-menu" type="button" id="button-open" title="Open menu"></button>
+      <button id="button-open" class="button-icon button-menu" type="button" title="Menu"></button>
     </header>
 
     <main>
       <section class="hero">
         <h1>Class-toggled div menu</h1>
         <p>An anti-pattern that toggles menu state only by changing classes.</p>
+        <a href="index.html">Back to Index</a>
         <a href="#">Background link</a>
-      </section>
-
-      <section class="summary">
-        <h2>Background focus target</h2>
-        <p><a href="#">Second background link</a></p>
       </section>
 
       <div class="scroll-test-space"></div>
@@ -105,9 +100,9 @@
     </main>
 
     <!-- NG: state is controlled only by adding and removing a class on a div. -->
-    <div class="menu-ng-fullscreen" id="menu">
+    <div id="menu" class="menu-ng-fullscreen">
       <header class="menu-header">
-        <button class="button-icon button-close" type="button" id="button-close" title="Close menu"></button>
+        <button id="button-close" class="button-icon button-close" type="button" title="Close"></button>
       </header>
 
       <nav class="menu-fullscreen-nav">

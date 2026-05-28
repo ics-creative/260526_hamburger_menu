@@ -19,24 +19,6 @@
   font-weight: bold;
 }
 
-.demo-index-link {
-  margin-inline-end: auto;
-  padding: 8px 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-weight: bold;
-  transition:
-    background-color 0.2s,
-    border-color 0.2s;
-
-  @media (any-hover: hover) {
-    &:hover {
-      border-color: var(--text);
-      background-color: var(--bg);
-    }
-  }
-}
-
 .hero {
   padding: 48px 24px;
 
