@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/layout.css" />
     <link rel="stylesheet" href="styles/controls.css" />
     <style>
-      .ng-fullscreen-menu {
+      .menu-ng-fullscreen {
         position: fixed;
         z-index: 2;
         inset: 0;
@@ -33,7 +33,7 @@
           min-height: var(--site-header-height);
         }
 
-        .fullscreen-menu-nav {
+        .menu-fullscreen-nav {
           counter-reset: fullscreen-item;
           display: grid;
           align-content: start;
@@ -105,12 +105,12 @@
     </main>
 
     <!-- NG: state is controlled only by adding and removing a class on a div. -->
-    <div class="ng-fullscreen-menu" id="menu">
+    <div class="menu-ng-fullscreen" id="menu">
       <header class="menu-header">
         <button class="button-icon button-close" type="button" id="button-close" title="Close menu"></button>
       </header>
 
-      <nav class="fullscreen-menu-nav">
+      <nav class="menu-fullscreen-nav">
         <a href="#"><span>Work</span></a>
         <a href="#"><span>Studio</span></a>
         <a href="#"><span>Services</span></a>

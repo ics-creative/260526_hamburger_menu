@@ -21,7 +21,7 @@
         outline-offset: 4px;
       }
 
-      .checkbox-menu {
+      .menu-checkbox {
         position: fixed;
         z-index: 2;
         inset: 0;
@@ -42,7 +42,7 @@
           min-height: var(--site-header-height);
         }
 
-        .fullscreen-menu-nav {
+        .menu-fullscreen-nav {
           counter-reset: fullscreen-item;
           display: grid;
           align-content: start;
@@ -86,7 +86,7 @@
         }
       }
 
-      .menu-toggle:checked ~ .checkbox-menu {
+      .menu-toggle:checked ~ .menu-checkbox {
         display: grid;
       }
     </style>
@@ -120,12 +120,12 @@
       </footer>
     </main>
 
-    <div class="checkbox-menu">
+    <div class="menu-checkbox">
       <header class="menu-header">
         <label class="button-icon button-close" for="menu-toggle" title="Close menu"></label>
       </header>
 
-      <nav class="fullscreen-menu-nav">
+      <nav class="menu-fullscreen-nav">
         <a href="#"><span>Work</span></a>
         <a href="#"><span>Studio</span></a>
         <a href="#"><span>Services</span></a>

@@ -1,15 +1,15 @@
 /* メガメニュー型popover */
 /* Mega-menu popover */
 
-.mega-menu {
-  --mega-menu-gap: 8px;
+.menu-mega {
+  --menu-mega-gap: 8px;
 
-  inset: calc(var(--site-header-height) + var(--mega-menu-gap)) 24px auto;
+  inset: calc(var(--site-header-height) + var(--menu-mega-gap)) 24px auto;
   display: block;
   width: auto;
   height: max-content;
   min-block-size: 0;
-  max-block-size: calc(100dvh - var(--site-header-height) - var(--mega-menu-gap) - 24px);
+  max-block-size: calc(100dvh - var(--site-header-height) - var(--menu-mega-gap) - 24px);
   padding: 24px;
   border-radius: 8px;
   box-shadow:
@@ -22,7 +22,7 @@
 
   @media (width <= 720px) {
     inset-inline: 16px;
-    max-block-size: calc(100dvh - var(--site-header-height) - var(--mega-menu-gap) - 16px);
+    max-block-size: calc(100dvh - var(--site-header-height) - var(--menu-mega-gap) - 16px);
     padding: 16px;
   }
 
@@ -30,7 +30,7 @@
     background: transparent;
   }
 
-  .mega-grid {
+  .menu-mega-grid {
     display: grid;
     gap: 0;
     grid-template-columns: repeat(4, minmax(0, 1fr));

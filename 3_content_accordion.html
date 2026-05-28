@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="styles/menu-fullscreen.css" />
     <script src="scripts/menu.js" defer></script>
     <style>
-      .accordion-list {
+      .menu-accordion-list {
         /* detailsのauto高さアニメーション */
         /* Auto-height animation for details */
         interpolate-size: allow-keywords;
@@ -68,7 +68,7 @@
           }
         }
 
-        .accordion-title {
+        .menu-accordion-title {
           min-width: 0;
           overflow-wrap: anywhere;
         }
@@ -117,15 +117,15 @@
 
     <!-- アコーディオン型ハンバーガーメニュー本体 -->
     <!-- Accordion hamburger menu panel -->
-    <dialog class="menu-dialog full-menu accordion-menu" id="menu">
+    <dialog class="menu-dialog menu-full menu-accordion" id="menu">
       <header class="menu-header">
         <button class="button-icon button-close" id="button-close" title="Close menu"></button>
       </header>
 
-      <div class="menu-list large-menu-list accordion-list">
+      <div class="menu-list menu-list-large menu-accordion-list">
         <details>
           <summary>
-            <span class="accordion-title">Residents</span>
+            <span class="menu-accordion-title">Residents</span>
           </summary>
           <a href="#">Certificates</a>
           <a href="#">Health services</a>
@@ -133,7 +133,7 @@
         </details>
         <details>
           <summary>
-            <span class="accordion-title">Business</span>
+            <span class="menu-accordion-title">Business</span>
           </summary>
           <a href="#">Permits</a>
           <a href="#">Procurement</a>
@@ -141,7 +141,7 @@
         </details>
         <details>
           <summary>
-            <span class="accordion-title">Visitors</span>
+            <span class="menu-accordion-title">Visitors</span>
           </summary>
           <a href="#">Access</a>
           <a href="#">Events</a>

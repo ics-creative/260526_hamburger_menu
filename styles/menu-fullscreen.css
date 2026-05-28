@@ -1,7 +1,7 @@
 /* フルスクリーン型メニュー */
 /* Full-screen menu */
 
-.full-menu {
+.menu-full {
   inset: 0;
   grid-template-rows: var(--site-header-height) minmax(0, 1fr);
   gap: 0;
@@ -39,7 +39,7 @@
   }
 }
 
-.large-menu-list {
+.menu-list-large {
   a,
   summary {
     font-size: 4rem;
@@ -50,13 +50,13 @@
   }
 }
 
-.fullscreen-menu {
+.menu-fullscreen {
   grid-template-rows: var(--site-header-height) minmax(0, 1fr);
   overflow-y: auto;
 
   &[open],
   &:popover-open {
-    .fullscreen-menu-nav {
+    .menu-fullscreen-nav {
       a {
         @starting-style {
           opacity: 0;
@@ -64,19 +64,9 @@
         }
       }
     }
-
-    @supports (width: calc(sibling-index() * 1px)) {
-      .fullscreen-menu-nav {
-        a {
-          @starting-style {
-            translate: calc((sibling-index() - 1) * 24px) 0;
-          }
-        }
-      }
-    }
   }
 
-  .fullscreen-menu-nav {
+  .menu-fullscreen-nav {
     counter-reset: fullscreen-item;
     display: grid;
     align-content: start;
@@ -84,7 +74,7 @@
     padding-block: 24px;
 
     a {
-      --menu-index: 1;
+      --menu-index: sibling-index();
 
       counter-increment: fullscreen-item;
       display: grid;
@@ -120,10 +110,6 @@
           background-color: var(--bg);
           padding-inline: 16px;
         }
-      }
-
-      @supports (width: calc(sibling-index() * 1px)) {
-        --menu-index: sibling-index();
       }
 
       @media (width <= 720px) {
